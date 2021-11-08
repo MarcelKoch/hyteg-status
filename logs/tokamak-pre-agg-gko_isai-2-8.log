@@ -1,0 +1,239 @@
+================================================================================
+|       BEGIN LOGGING - Friday, 05.November 2021, 11:20:43                     |
+================================================================================
+[  0][INFO    ]------(0.000 sec) Git info:
+[  0][INFO    ]------(0.000 sec)  - SHA1:   acc0eff4f
+[  0][INFO    ]------(0.000 sec)  - branch: koch/gingko-integration
+[  0][INFO    ]------(0.000 sec) Solver settings
+[  0]                              - solver:                      gmg_wjac
+[  0]                              - relative residual reduction: 0.001
+[  0]                              - pre smooth:                  3
+[  0]                              - post smooth:                 3
+[  0]                              - coarse grid:                 cg_ginkgo
+[  0]                              - ginkgo executor:             cuda
+[  0]                              - ginkgo config file:          gko-isai.json
+[  0]                              - use agglomeration on coarse grid with 76 processes
+[  0]                            
+[  0][INFO    ]------(0.001 sec) Discretization
+[  0]                              - element type: p1
+[  0]                              - min level:    0
+[  0]                              - max level:    6
+[  0]                            
+[  0][INFO    ]------(0.001 sec) Tokamak domain and PDE config
+[  0]                              - toroidal slices:     8
+[  0]                              - poloidal slices:     6
+[  0]                              - tube layer radii:    [3 ]
+[  0]                              - coeff min:           1e-06
+[  0]                              - coeff max:           1
+[  0]                              - coeff jump location: 0.5
+[  0]                              - coeff jump width:    0.1
+[  0]                              - coarse mesh refine:  2
+[  0]                            
+[  0][INFO    ]------(0.001 sec) App settings
+[  0]                              - DB file:                          Tokamak.db
+[  0]                              - coarse mesh and quit:             false
+[  0]                              - VTK:                              false
+[  0]                              - VTK directory:                    ./vtk
+[  0]                              - precomputing element matrices:    true
+[  0]                              - output linear system and vectors: false
+[  0]                              - output linear system base name:   test
+[  0]                              - output linear system format:      ascii_matlab
+[  0]                            
+[  0][INFO    ]------(0.001 sec) [progress] Setting up torus mesh ...
+[  0][INFO    ]------(0.582 sec) [progress] Setting up tokamak blending map ...
+[  0][INFO    ]------(0.632 sec) [progress] Finished setting up tokamak blending map
+[  0][INFO    ]------(0.685 sec) ====================== PrimitiveStorage ======================
+[  0]                             - mesh dimensionality:                              3D
+[  0]                             - processes:                                        608
+[  0]                             - neighbor processes (min, max, avg):               12, 59, 24.3125
+[  0]                             - primitive distribution:
+[  0]                                            +-------------------------------------------+
+[  0]                                            |    total |      min |      max |      avg |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               | primitives |    44772 |       52 |       88 |     73.6 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |   vertices |     2246 |        2 |        5 |      3.7 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |      edges |    13163 |       11 |       30 |     21.6 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |      faces |    20147 |       23 |       40 |     33.1 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |      cells |     9216 |       15 |       16 |     15.2 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                            ==============================================================
+[  0]                            
+[  0][INFO    ]------(0.686 sec) DoFs
+[  0][INFO    ]------(0.686 sec) level |          inner |          total 
+[  0][INFO    ]------(0.686 sec) ---------------------------------------
+[  0][INFO    ]------(0.686 sec)     0 |            708 |           2246
+[  0][INFO    ]------(0.686 sec)     1 |           8860 |          15409
+[  0][INFO    ]------(0.686 sec)     2 |          84531 |         111392
+[  0][INFO    ]------(0.686 sec)     3 |         731389 |         840034
+[  0][INFO    ]------(0.686 sec)     4 |        6071553 |        6508406
+[  0][INFO    ]------(0.686 sec)     5 |       49452745 |       51204574
+[  0][INFO    ]------(0.686 sec)     6 |      399139161 |      406155182
+[  0][INFO    ]------(0.686 sec) ---------------------------------------
+[  0][INFO    ]------(0.686 sec) [progress] Allocation of functions and operator setup ...
+[  0][INFO    ]-----(41.506 sec) [progress] Precomputing element matrices ...
+[  0][INFO    ]-----(83.027 sec) ====================== Function Allocation Info ======================
+[  0][INFO    ]-----(83.027 sec)                        +--------------+--------------+--------------+
+[  0][INFO    ]-----(83.028 sec)                        |          sum |          min |          max |
+[  0][INFO    ]-----(83.028 sec)  ----------------------+--------------+--------------+--------------+
+[  0][INFO    ]-----(83.028 sec)  allocated memory (GB) |       44.223 |        0.068 |        0.078 | 
+[  0][INFO    ]-----(83.028 sec)  ----------------------+--------------+--------------+--------------+
+[  0][INFO    ]-----(83.028 sec) 
+[  0][INFO    ]-----(83.028 sec)            +----------------------+----------------------+----------------------+
+[  0][INFO    ]-----(83.028 sec)            |  number of functions |          number DoFs | memory DoFs only (GB)|
+[  0][INFO    ]-----(83.028 sec)  ----------+----------------------+----------------------+----------------------+
+[  0][INFO    ]-----(83.028 sec)  VertexDoF |                    8 |           3718697944 |               29.750 |
+[  0][INFO    ]-----(83.028 sec)  EdgeDoF   |                    0 |                    0 |                0.000 |
+[  0][INFO    ]-----(83.028 sec)  ----------+----------------------+----------------------+----------------------+
+[  0][INFO    ]-----(83.028 sec)  total     |                    8 |           3718697944 |               29.750 |
+[  0][INFO    ]-----(83.028 sec)  ----------+----------------------+----------------------+----------------------+
+[  0][INFO    ]-----(83.028 sec) 
+[  0][INFO    ]-----(83.028 sec)  - mixed and composites:
+[  0][INFO    ]-----(83.028 sec)    + P2Function:       0
+[  0][INFO    ]-----(83.028 sec) ======================================================================
+[  0][INFO    ]-----(83.028 sec) ========================= Memory Usage Info =========================
+[  0][INFO    ]-----(83.028 sec)  method: PETSc
+[  0][INFO    ]-----(83.028 sec)                        +--------------+--------------+--------------+
+[  0][INFO    ]-----(83.028 sec)                        |          sum |          min |          max |
+[  0][INFO    ]-----(83.028 sec)  ----------------------+--------------+--------------+--------------+
+[  0][INFO    ]-----(83.028 sec)  allocated memory (GB) |      885.417 |        1.438 |        1.538 | 
+[  0][INFO    ]-----(83.028 sec)  ----------------------+--------------+--------------+--------------+
+[  0][INFO    ]-----(83.028 sec) =====================================================================
+[  0][INFO    ]-----(83.028 sec) 
+[  0][INFO    ]-----(83.028 sec) [progress] Interpolating boundary conditions, coefficient, and exact solution ...
+[  0][INFO    ]-----(92.177 sec) [progress] Setting up solver ...
+[  0][INFO    ]-----(92.218 sec) [progress] Coarse grid solver agglomeration enabled.
+[  0][INFO    ]-----(92.218 sec) [progress] Agglomeration from 608 to 76 processes.
+[  0][INFO    ]-----(92.218 sec) [progress] Solving on empty processes: yes
+[  0][INFO    ]-----(92.218 sec) [progress] Setting up agglomeration primitive storage ...
+[  0][INFO    ]-----(92.218 sec) [progress] Re-distribution of agglomeration primitive storage  ...
+[  0][INFO    ]-----(92.277 sec) ====================== PrimitiveStorage ======================
+[  0]                             - mesh dimensionality:                              3D
+[  0]                             - processes:                                        76
+[  0]                             - neighbor processes (min, max, avg):               12, 67, 18.2368
+[  0]                             - primitive distribution:
+[  0]                                            +-------------------------------------------+
+[  0]                                            |    total |      min |      max |      avg |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               | primitives |    44772 |      479 |      657 |    589.1 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |   vertices |     2246 |       21 |       36 |     29.6 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |      edges |    13163 |      120 |      209 |    173.2 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |      faces |    20147 |      207 |      294 |    265.1 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                               |      cells |     9216 |      120 |      128 |    121.3 |
+[  0]                               +------------+----------+----------+----------+----------+
+[  0]                            ==============================================================
+[  0]                            
+[  0][INFO    ]-----(93.753 sec) Using cuda executor on root
+[  0][INFO    ]-----(93.772 sec) [progress] Initial residual and error calculation ...
+[  0][INFO    ]-----(94.174 sec) [progress] Solving ...
+[  0][INFO    ]-----(94.174 sec)  iteration |  residual | res. rate |     error 
+[  0][INFO    ]-----(94.174 sec)  ----------+-----------+-----------+-----------
+[  0][INFO    ]-----(94.174 sec)    initial |  1.74e-04 |         - |  4.58e-02
+[  1][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 1 -> local size: 24 local range: 24-48
+[ 12][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 12 -> local size: 23 local range: 347-370
+[ 13][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 13 -> local size: 25 local range: 370-395
+[ 15][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 15 -> local size: 29 local range: 426-455
+[ 17][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 17 -> local size: 34 local range: 484-518
+[ 20][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 20 -> local size: 29 local range: 572-601
+[ 30][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 30 -> local size: 31 local range: 854-885
+[ 31][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 31 -> local size: 31 local range: 885-916
+[ 56][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 56 -> local size: 31 local range: 1615-1646
+[ 62][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 62 -> local size: 29 local range: 1802-1831
+[ 67][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 67 -> local size: 31 local range: 1958-1989
+[ 69][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 69 -> local size: 31 local range: 2019-2050
+[ 73][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 73 -> local size: 31 local range: 2147-2178
+[ 74][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 74 -> local size: 33 local range: 2178-2211
+[ 75][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 75 -> local size: 35 local range: 2211-2246
+[  0][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 0 -> local size: 24 local range: 0-24
+[  2][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 2 -> local size: 29 local range: 48-77
+[  3][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 3 -> local size: 36 local range: 77-113
+[  6][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 6 -> local size: 33 local range: 177-210
+[  8][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 8 -> local size: 33 local range: 244-277
+[ 14][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 14 -> local size: 31 local range: 395-426
+[ 16][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 16 -> local size: 29 local range: 455-484
+[ 18][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 18 -> local size: 27 local range: 518-545
+[ 19][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 19 -> local size: 27 local range: 545-572
+[ 21][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 21 -> local size: 27 local range: 601-628
+[ 22][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 22 -> local size: 29 local range: 628-657
+[ 23][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 23 -> local size: 30 local range: 657-687
+[ 24][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 24 -> local size: 26 local range: 687-713
+[ 26][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 26 -> local size: 29 local range: 739-768
+[ 27][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 27 -> local size: 29 local range: 768-797
+[ 28][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 28 -> local size: 27 local range: 797-824
+[ 33][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 33 -> local size: 27 local range: 945-972
+[ 37][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 37 -> local size: 24 local range: 1039-1063
+[ 39][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 39 -> local size: 28 local range: 1087-1115
+[ 43][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 43 -> local size: 31 local range: 1199-1230
+[ 44][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 44 -> local size: 33 local range: 1230-1263
+[ 45][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 45 -> local size: 34 local range: 1263-1297
+[ 46][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 46 -> local size: 33 local range: 1297-1330
+[ 47][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 47 -> local size: 33 local range: 1330-1363
+[ 48][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 48 -> local size: 34 local range: 1363-1397
+[ 49][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 49 -> local size: 33 local range: 1397-1430
+[ 50][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 50 -> local size: 35 local range: 1430-1465
+[ 51][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 51 -> local size: 29 local range: 1465-1494
+[ 52][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 52 -> local size: 30 local range: 1494-1524
+[ 53][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 53 -> local size: 30 local range: 1524-1554
+[ 54][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 54 -> local size: 30 local range: 1554-1584
+[ 55][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 55 -> local size: 31 local range: 1584-1615
+[ 57][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 57 -> local size: 30 local range: 1646-1676
+[ 58][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 58 -> local size: 30 local range: 1676-1706
+[ 59][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 59 -> local size: 33 local range: 1706-1739
+[ 60][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 60 -> local size: 30 local range: 1739-1769
+[ 61][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 61 -> local size: 33 local range: 1769-1802
+[ 63][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 63 -> local size: 32 local range: 1831-1863
+[ 64][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 64 -> local size: 30 local range: 1863-1893
+[ 65][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 65 -> local size: 32 local range: 1893-1925
+[ 66][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 66 -> local size: 33 local range: 1925-1958
+[ 68][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 68 -> local size: 30 local range: 1989-2019
+[ 70][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 70 -> local size: 31 local range: 2050-2081
+[ 71][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 71 -> local size: 31 local range: 2081-2112
+[ 72][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 72 -> local size: 35 local range: 2112-2147
+[  4][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 4 -> local size: 32 local range: 113-145
+[  5][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 5 -> local size: 32 local range: 145-177
+[  7][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 7 -> local size: 34 local range: 210-244
+[  9][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 9 -> local size: 22 local range: 277-299
+[ 10][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 10 -> local size: 21 local range: 299-320
+[ 11][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 11 -> local size: 27 local range: 320-347
+[ 25][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 25 -> local size: 26 local range: 713-739
+[ 29][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 29 -> local size: 30 local range: 824-854
+[ 32][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 32 -> local size: 29 local range: 916-945
+[ 34][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 34 -> local size: 23 local range: 972-995
+[ 35][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 35 -> local size: 22 local range: 995-1017
+[ 36][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 36 -> local size: 22 local range: 1017-1039
+[ 38][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 38 -> local size: 24 local range: 1063-1087
+[ 40][INFO    ]-----(95.848 sec) [Ginkgo CG] Rank 40 -> local size: 28 local range: 1115-1143
+[ 41][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 41 -> local size: 28 local range: 1143-1171
+[ 42][INFO    ]-----(95.849 sec) [Ginkgo CG] Rank 42 -> local size: 28 local range: 1171-1199
+[  0][INFO    ]-----(95.991 sec) [Ginkgo CG] converged after 24 iterations,  residual norm: 4.92953e-13
+[  0][INFO    ]-----(97.514 sec)          1 |  1.70e-05 |  9.78e-02 |  1.59e-02
+[  0][INFO    ]-----(99.053 sec) [Ginkgo CG] converged after 22 iterations,  residual norm: 7.69399e-13
+[  0][INFO    ]----(100.643 sec)          2 |  5.19e-06 |  3.05e-01 |  7.56e-03
+[  0][INFO    ]----(102.188 sec) [Ginkgo CG] converged after 22 iterations,  residual norm: 2.83862e-13
+[  0][INFO    ]----(103.705 sec)          3 |  2.55e-06 |  4.91e-01 |  4.11e-03
+[  0][INFO    ]----(105.241 sec) [Ginkgo CG] converged after 21 iterations,  residual norm: 5.23149e-13
+[  0][INFO    ]----(106.850 sec)          4 |  1.50e-06 |  5.89e-01 |  2.40e-03
+[  0][INFO    ]----(108.398 sec) [Ginkgo CG] converged after 20 iterations,  residual norm: 7.7518e-13
+[  0][INFO    ]----(109.949 sec)          5 |  9.46e-07 |  6.32e-01 |  1.47e-03
+[  0][INFO    ]----(111.595 sec) [Ginkgo CG] converged after 20 iterations,  residual norm: 3.61769e-13
+[  0][INFO    ]----(113.111 sec)          6 |  6.19e-07 |  6.54e-01 |  9.33e-04
+[  0][INFO    ]----(114.644 sec) [Ginkgo CG] converged after 19 iterations,  residual norm: 5.44514e-13
+[  0][INFO    ]----(116.249 sec)          7 |  4.13e-07 |  6.67e-01 |  6.11e-04
+[  0][INFO    ]----(117.800 sec) [Ginkgo CG] converged after 18 iterations,  residual norm: 8.74917e-13
+[  0][INFO    ]----(119.294 sec)          8 |  2.79e-07 |  6.76e-01 |  4.12e-04
+[  0][INFO    ]----(120.896 sec) [Ginkgo CG] converged after 18 iterations,  residual norm: 4.81156e-13
+[  0][INFO    ]----(122.548 sec)          9 |  1.90e-07 |  6.82e-01 |  2.85e-04
+[  0][INFO    ]----(124.206 sec) [Ginkgo CG] converged after 17 iterations,  residual norm: 9.80362e-13
+[  0][INFO    ]----(125.708 sec)         10 |  1.31e-07 |  6.87e-01 |  2.01e-04
+[  0][INFO    ]----(125.708 sec) [progress] Residual and error calculation ...
+[  0][INFO    ]----(126.041 sec) [progress] Writing JSON file:tokamak-pre-agg-gko_isai-2-8.timings.json
+================================================================================
+|         END LOGGING - Friday, 05.November 2021, 11:22:51                     |
+================================================================================

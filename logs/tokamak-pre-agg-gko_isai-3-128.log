@@ -1,0 +1,1377 @@
+================================================================================
+|       BEGIN LOGGING - Friday, 05.November 2021, 11:21:52                     |
+================================================================================
+[   0][INFO    ]------(0.000 sec) Git info:
+[   0][INFO    ]------(0.000 sec)  - SHA1:   acc0eff4f
+[   0][INFO    ]------(0.000 sec)  - branch: koch/gingko-integration
+[   0][INFO    ]------(0.001 sec) Solver settings
+[   0]                              - solver:                      gmg_wjac
+[   0]                              - relative residual reduction: 0.001
+[   0]                              - pre smooth:                  3
+[   0]                              - post smooth:                 3
+[   0]                              - coarse grid:                 cg_ginkgo
+[   0]                              - ginkgo executor:             cuda
+[   0]                              - ginkgo config file:          gko-isai.json
+[   0]                              - use agglomeration on coarse grid with 1216 processes
+[   0]                            
+[   0][INFO    ]------(0.001 sec) Discretization
+[   0]                              - element type: p1
+[   0]                              - min level:    0
+[   0]                              - max level:    6
+[   0]                            
+[   0][INFO    ]------(0.001 sec) Tokamak domain and PDE config
+[   0]                              - toroidal slices:     12
+[   0]                              - poloidal slices:     9
+[   0]                              - tube layer radii:    [3 ]
+[   0]                              - coeff min:           1e-06
+[   0]                              - coeff max:           1
+[   0]                              - coeff jump location: 0.5
+[   0]                              - coeff jump width:    0.1
+[   0]                              - coarse mesh refine:  3
+[   0]                            
+[   0][INFO    ]------(0.001 sec) App settings
+[   0]                              - DB file:                          Tokamak.db
+[   0]                              - coarse mesh and quit:             false
+[   0]                              - VTK:                              false
+[   0]                              - VTK directory:                    ./vtk
+[   0]                              - precomputing element matrices:    true
+[   0]                              - output linear system and vectors: false
+[   0]                              - output linear system base name:   test
+[   0]                              - output linear system format:      ascii_matlab
+[   0]                            
+[   0][INFO    ]------(0.001 sec) [progress] Setting up torus mesh ...
+[   0][INFO    ]-----(11.976 sec) [progress] Setting up tokamak blending map ...
+[   0][INFO    ]-----(13.014 sec) [progress] Finished setting up tokamak blending map
+[   0][INFO    ]-----(14.069 sec) ====================== PrimitiveStorage ======================
+[   0]                             - mesh dimensionality:                              3D
+[   0]                             - processes:                                        9728
+[   0]                             - neighbor processes (min, max, avg):               10, 76, 27.8779
+[   0]                             - primitive distribution:
+[   0]                                            +-------------------------------------------+
+[   0]                                            |    total |      min |      max |      avg |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               | primitives |   754234 |       48 |      102 |     77.5 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |   vertices |    32997 |        1 |        6 |      3.4 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      edges |   211185 |        9 |       34 |     21.7 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      faces |   344164 |       19 |       45 |     35.4 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      cells |   165888 |       17 |       18 |     17.1 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                            ==============================================================
+[   0]                            
+[   0][INFO    ]-----(14.070 sec) DoFs
+[   0][INFO    ]-----(14.070 sec) level |          inner |          total 
+[   0][INFO    ]-----(14.070 sec) ---------------------------------------
+[   0][INFO    ]-----(14.072 sec)     0 |          21128 |          32997
+[   0][INFO    ]-----(14.074 sec)     1 |         195582 |         244182
+[   0][INFO    ]-----(14.078 sec)     2 |        1668542 |        1864932
+[   0][INFO    ]-----(14.082 sec)     3 |       13755534 |       14544816
+[   0][INFO    ]-----(14.085 sec)     4 |      111652718 |      114817032
+[   0][INFO    ]-----(14.089 sec)     5 |      899611182 |      912282552
+[   0][INFO    ]-----(14.090 sec)     6 |     2927387566 |     2978101016
+[   0][INFO    ]-----(14.090 sec) ---------------------------------------
+[   0][INFO    ]-----(14.090 sec) [progress] Allocation of functions and operator setup ...
+[   0][INFO    ]-----(62.370 sec) [progress] Precomputing element matrices ...
+[   0][INFO    ]----(113.420 sec) ====================== Function Allocation Info ======================
+[   0][INFO    ]----(113.420 sec)                        +--------------+--------------+--------------+
+[   0][INFO    ]----(113.421 sec)                        |          sum |          min |          max |
+[   0][INFO    ]----(113.421 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]----(113.421 sec)  allocated memory (GB) |      791.845 |        0.075 |        0.086 | 
+[   0][INFO    ]----(113.421 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]----(113.421 sec) 
+[   0][INFO    ]----(113.421 sec)            +----------------------+----------------------+----------------------+
+[   0][INFO    ]----(113.421 sec)            |  number of functions |          number DoFs | memory DoFs only (GB)|
+[   0][INFO    ]----(113.421 sec)  ----------+----------------------+----------------------+----------------------+
+[   0][INFO    ]----(113.421 sec)  VertexDoF |                    8 |          66534838584 |              532.279 |
+[   0][INFO    ]----(113.421 sec)  EdgeDoF   |                    0 |                    0 |                0.000 |
+[   0][INFO    ]----(113.421 sec)  ----------+----------------------+----------------------+----------------------+
+[   0][INFO    ]----(113.421 sec)  total     |                    8 |          66534838584 |              532.279 |
+[   0][INFO    ]----(113.421 sec)  ----------+----------------------+----------------------+----------------------+
+[   0][INFO    ]----(113.421 sec) 
+[   0][INFO    ]----(113.421 sec)  - mixed and composites:
+[   0][INFO    ]----(113.421 sec)    + P2Function:       0
+[   0][INFO    ]----(113.421 sec) ======================================================================
+[   0][INFO    ]----(113.441 sec) ========================= Memory Usage Info =========================
+[   0][INFO    ]----(113.441 sec)  method: PETSc
+[   0][INFO    ]----(113.441 sec)                        +--------------+--------------+--------------+
+[   0][INFO    ]----(113.441 sec)                        |          sum |          min |          max |
+[   0][INFO    ]----(113.441 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]----(113.441 sec)  allocated memory (GB) |    29582.832 |        3.030 |        3.126 | 
+[   0][INFO    ]----(113.441 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]----(113.441 sec) =====================================================================
+[   0][INFO    ]----(113.441 sec) 
+[   0][INFO    ]----(113.441 sec) [progress] Interpolating boundary conditions, coefficient, and exact solution ...
+[   0][INFO    ]----(124.352 sec) [progress] Setting up solver ...
+[   0][INFO    ]----(124.616 sec) [progress] Coarse grid solver agglomeration enabled.
+[   0][INFO    ]----(124.619 sec) [progress] Agglomeration from 9728 to 1216 processes.
+[   0][INFO    ]----(124.619 sec) [progress] Solving on empty processes: yes
+[   0][INFO    ]----(124.619 sec) [progress] Setting up agglomeration primitive storage ...
+[   0][INFO    ]----(124.619 sec) [progress] Re-distribution of agglomeration primitive storage  ...
+[   0][INFO    ]----(124.779 sec) ====================== PrimitiveStorage ======================
+[   0]                             - mesh dimensionality:                              3D
+[   0]                             - processes:                                        1216
+[   0]                             - neighbor processes (min, max, avg):               16, 160, 33.5806
+[   0]                             - primitive distribution:
+[   0]                                            +-------------------------------------------+
+[   0]                                            |    total |      min |      max |      avg |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               | primitives |   754234 |      460 |      722 |    620.3 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |   vertices |    32997 |       16 |       39 |     27.1 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      edges |   211185 |      103 |      224 |    173.7 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      faces |   344164 |      192 |      327 |    283.0 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      cells |   165888 |      136 |      144 |    136.4 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                            ==============================================================
+[   0]                            
+[   0][INFO    ]----(126.542 sec) Using cuda executor on root
+[   0][INFO    ]----(126.582 sec) [progress] Initial residual and error calculation ...
+[   0][INFO    ]----(127.128 sec) [progress] Solving ...
+[   0][INFO    ]----(127.128 sec)  iteration |  residual | res. rate |     error 
+[   0][INFO    ]----(127.128 sec)  ----------+-----------+-----------+-----------
+[   0][INFO    ]----(127.128 sec)    initial |  3.58e-05 |         - |  4.56e-02
+[   4][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 4 -> local size: 19 local range: 75-94
+[   5][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 5 -> local size: 20 local range: 94-114
+[   6][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 6 -> local size: 20 local range: 114-134
+[   7][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 7 -> local size: 20 local range: 134-154
+[   8][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 8 -> local size: 20 local range: 154-174
+[  13][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 13 -> local size: 18 local range: 250-268
+[  16][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 16 -> local size: 18 local range: 308-326
+[  17][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 17 -> local size: 20 local range: 326-346
+[  19][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 19 -> local size: 24 local range: 368-392
+[  20][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 20 -> local size: 24 local range: 392-416
+[  21][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 21 -> local size: 27 local range: 416-443
+[  22][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 22 -> local size: 24 local range: 443-467
+[  23][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 23 -> local size: 24 local range: 467-491
+[  24][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 24 -> local size: 24 local range: 491-515
+[  26][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 26 -> local size: 24 local range: 540-564
+[  27][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 27 -> local size: 24 local range: 564-588
+[  28][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 28 -> local size: 24 local range: 588-612
+[  29][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 29 -> local size: 31 local range: 612-643
+[  30][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 30 -> local size: 26 local range: 643-669
+[  31][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 31 -> local size: 26 local range: 669-695
+[  32][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 32 -> local size: 25 local range: 695-720
+[  33][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 33 -> local size: 32 local range: 720-752
+[  34][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 34 -> local size: 26 local range: 752-778
+[  35][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 35 -> local size: 24 local range: 778-802
+[  36][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 36 -> local size: 25 local range: 802-827
+[  38][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 38 -> local size: 24 local range: 855-879
+[  39][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 39 -> local size: 24 local range: 879-903
+[  40][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 40 -> local size: 24 local range: 903-927
+[  42][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 42 -> local size: 26 local range: 956-982
+[  44][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 44 -> local size: 25 local range: 1008-1033
+[  45][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 45 -> local size: 32 local range: 1033-1065
+[  46][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 46 -> local size: 24 local range: 1065-1089
+[  47][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 47 -> local size: 24 local range: 1089-1113
+[  48][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 48 -> local size: 24 local range: 1113-1137
+[  51][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 51 -> local size: 24 local range: 1190-1214
+[  52][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 52 -> local size: 25 local range: 1214-1239
+[  53][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 53 -> local size: 31 local range: 1239-1270
+[  56][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 56 -> local size: 27 local range: 1319-1346
+[  57][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 57 -> local size: 29 local range: 1346-1375
+[  58][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 58 -> local size: 24 local range: 1375-1399
+[  59][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 59 -> local size: 24 local range: 1399-1423
+[  60][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 60 -> local size: 26 local range: 1423-1449
+[  61][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 61 -> local size: 27 local range: 1449-1476
+[  62][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 62 -> local size: 24 local range: 1476-1500
+[  63][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 63 -> local size: 24 local range: 1500-1524
+[  64][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 64 -> local size: 26 local range: 1524-1550
+[  65][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 65 -> local size: 30 local range: 1550-1580
+[  66][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 66 -> local size: 28 local range: 1580-1608
+[  67][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 67 -> local size: 29 local range: 1608-1637
+[  69][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 69 -> local size: 31 local range: 1666-1697
+[  70][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 70 -> local size: 32 local range: 1697-1729
+[  71][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 71 -> local size: 33 local range: 1729-1762
+[  72][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 72 -> local size: 32 local range: 1762-1794
+[  73][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 73 -> local size: 32 local range: 1794-1826
+[  74][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 74 -> local size: 32 local range: 1826-1858
+[   0][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 0 -> local size: 20 local range: 0-20
+[   1][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1 -> local size: 19 local range: 20-39
+[   2][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 2 -> local size: 19 local range: 39-58
+[   3][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 3 -> local size: 17 local range: 58-75
+[   9][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 9 -> local size: 19 local range: 174-193
+[  10][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 10 -> local size: 20 local range: 193-213
+[  11][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 11 -> local size: 18 local range: 213-231
+[  12][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 12 -> local size: 19 local range: 231-250
+[  14][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 14 -> local size: 21 local range: 268-289
+[  15][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 15 -> local size: 19 local range: 289-308
+[  18][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 18 -> local size: 22 local range: 346-368
+[  25][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 25 -> local size: 25 local range: 515-540
+[  37][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 37 -> local size: 28 local range: 827-855
+[  41][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 41 -> local size: 29 local range: 927-956
+[  43][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 43 -> local size: 26 local range: 982-1008
+[  49][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 49 -> local size: 29 local range: 1137-1166
+[  50][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 50 -> local size: 24 local range: 1166-1190
+[  54][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 54 -> local size: 25 local range: 1270-1295
+[  55][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 55 -> local size: 24 local range: 1295-1319
+[  68][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 68 -> local size: 29 local range: 1637-1666
+[  75][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 75 -> local size: 33 local range: 1858-1891
+[ 152][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 152 -> local size: 25 local range: 4355-4380
+[ 388][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 388 -> local size: 25 local range: 10434-10459
+[ 248][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 248 -> local size: 26 local range: 6677-6703
+[ 556][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 556 -> local size: 22 local range: 14888-14910
+[  82][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 82 -> local size: 32 local range: 2084-2116
+[ 304][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 304 -> local size: 23 local range: 8168-8191
+[ 988][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 988 -> local size: 36 local range: 26051-26087
+[ 608][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 608 -> local size: 25 local range: 16078-16103
+[ 684][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 684 -> local size: 20 local range: 17952-17972
+[ 912][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 912 -> local size: 29 local range: 23676-23705
+[ 836][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 836 -> local size: 23 local range: 21669-21692
+[ 456][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 456 -> local size: 26 local range: 12265-12291
+[ 760][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 760 -> local size: 25 local range: 19807-19832
+[  96][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 96 -> local size: 32 local range: 2556-2588
+[1081][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1081 -> local size: 30 local range: 28889-28919
+[ 560][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 560 -> local size: 27 local range: 14980-15007
+[ 392][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 392 -> local size: 32 local range: 10547-10579
+[ 112][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 112 -> local size: 35 local range: 3074-3109
+[ 311][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 311 -> local size: 25 local range: 8361-8386
+[ 396][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 396 -> local size: 32 local range: 10657-10689
+[ 256][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 256 -> local size: 25 local range: 6887-6912
+[ 115][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 115 -> local size: 34 local range: 3178-3212
+[ 312][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 312 -> local size: 30 local range: 8386-8416
+[ 156][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 156 -> local size: 23 local range: 4446-4469
+[ 400][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 400 -> local size: 27 local range: 10769-10796
+[ 264][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 264 -> local size: 26 local range: 7084-7110
+[ 989][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 989 -> local size: 33 local range: 26087-26120
+[ 120][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 120 -> local size: 33 local range: 3340-3373
+[ 316][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 316 -> local size: 30 local range: 8501-8531
+[ 460][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 460 -> local size: 28 local range: 12371-12399
+[ 158][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 158 -> local size: 21 local range: 4491-4512
+[ 404][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 404 -> local size: 26 local range: 10875-10901
+[ 280][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 280 -> local size: 31 local range: 7507-7538
+[ 568][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 568 -> local size: 16 local range: 15159-15175
+[ 990][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 990 -> local size: 31 local range: 26120-26151
+[ 609][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 609 -> local size: 22 local range: 16103-16125
+[ 916][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 916 -> local size: 26 local range: 23794-23820
+[ 124][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 124 -> local size: 32 local range: 3471-3503
+[ 317][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 317 -> local size: 28 local range: 8531-8559
+[ 462][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 462 -> local size: 28 local range: 12423-12451
+[ 159][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 159 -> local size: 22 local range: 4512-4534
+[ 405][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 405 -> local size: 25 local range: 10901-10926
+[ 288][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 288 -> local size: 26 local range: 7734-7760
+[ 765][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 765 -> local size: 25 local range: 19924-19949
+[ 576][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 576 -> local size: 21 local range: 15336-15357
+[ 992][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 992 -> local size: 27 local range: 26178-26205
+[ 617][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 617 -> local size: 26 local range: 16324-16350
+[ 696][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 696 -> local size: 27 local range: 18232-18259
+[ 917][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 917 -> local size: 27 local range: 23820-23847
+[ 128][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 128 -> local size: 33 local range: 3600-3633
+[ 320][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 320 -> local size: 26 local range: 8613-8639
+[ 464][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 464 -> local size: 28 local range: 12477-12505
+[ 160][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 160 -> local size: 25 local range: 4534-4559
+[ 407][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 407 -> local size: 29 local range: 10951-10980
+[ 292][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 292 -> local size: 27 local range: 7844-7871
+[ 766][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 766 -> local size: 23 local range: 19949-19972
+[ 592][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 592 -> local size: 24 local range: 15723-15747
+[ 996][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 996 -> local size: 29 local range: 26288-26317
+[ 624][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 624 -> local size: 20 local range: 16491-16511
+[ 706][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 706 -> local size: 24 local range: 18485-18509
+[ 918][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 918 -> local size: 29 local range: 23847-23876
+[ 854][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 854 -> local size: 28 local range: 22083-22111
+[ 132][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 132 -> local size: 32 local range: 3735-3767
+[ 323][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 323 -> local size: 30 local range: 8692-8722
+[ 472][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 472 -> local size: 29 local range: 12691-12720
+[ 172][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 172 -> local size: 23 local range: 4826-4849
+[ 408][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 408 -> local size: 26 local range: 10980-11006
+[ 293][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 293 -> local size: 26 local range: 7871-7897
+[ 768][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 768 -> local size: 24 local range: 19995-20019
+[ 600][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 600 -> local size: 24 local range: 15898-15922
+[ 997][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 997 -> local size: 30 local range: 26317-26347
+[ 632][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 632 -> local size: 24 local range: 16681-16705
+[ 709][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 709 -> local size: 26 local range: 18558-18584
+[ 920][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 920 -> local size: 29 local range: 23903-23932
+[ 855][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 855 -> local size: 24 local range: 22111-22135
+[ 136][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 136 -> local size: 34 local range: 3870-3904
+[ 328][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 328 -> local size: 26 local range: 8830-8856
+[1090][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1090 -> local size: 29 local range: 29147-29176
+[ 476][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 476 -> local size: 28 local range: 12806-12834
+[ 173][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 173 -> local size: 23 local range: 4849-4872
+[ 412][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 412 -> local size: 27 local range: 11083-11110
+[ 294][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 294 -> local size: 28 local range: 7897-7925
+[ 773][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 773 -> local size: 24 local range: 20109-20133
+[ 532][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 532 -> local size: 29 local range: 14333-14362
+[ 999][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 999 -> local size: 31 local range: 26375-26406
+[ 639][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 639 -> local size: 27 local range: 16863-16890
+[ 712][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 712 -> local size: 24 local range: 18631-18655
+[ 928][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 928 -> local size: 30 local range: 24136-24166
+[ 856][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 856 -> local size: 28 local range: 22135-22163
+[ 144][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 144 -> local size: 32 local range: 4130-4162
+[ 332][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 332 -> local size: 25 local range: 8938-8963
+[1093][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1093 -> local size: 30 local range: 29233-29263
+[ 478][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 478 -> local size: 28 local range: 12860-12888
+[ 183][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 183 -> local size: 18 local range: 5088-5106
+[ 413][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 413 -> local size: 27 local range: 11110-11137
+[ 295][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 295 -> local size: 28 local range: 7925-7953
+[ 774][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 774 -> local size: 24 local range: 20133-20157
+[ 533][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 533 -> local size: 30 local range: 14362-14392
+[1000][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1000 -> local size: 28 local range: 26406-26434
+[ 644][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 644 -> local size: 27 local range: 17010-17037
+[ 716][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 716 -> local size: 25 local range: 18733-18758
+[ 934][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 934 -> local size: 29 local range: 24313-24342
+[ 860][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 860 -> local size: 26 local range: 22244-22270
+[  76][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 76 -> local size: 32 local range: 1891-1923
+[ 336][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 336 -> local size: 30 local range: 9046-9076
+[1100][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1100 -> local size: 31 local range: 29437-29468
+[ 480][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 480 -> local size: 30 local range: 12914-12944
+[ 189][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 189 -> local size: 28 local range: 5224-5252
+[ 416][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 416 -> local size: 27 local range: 11192-11219
+[ 296][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 296 -> local size: 23 local range: 7953-7976
+[ 776][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 776 -> local size: 29 local range: 20182-20211
+[ 535][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 535 -> local size: 33 local range: 14423-14456
+[1004][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1004 -> local size: 34 local range: 26526-26560
+[ 647][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 647 -> local size: 18 local range: 17093-17111
+[ 720][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 720 -> local size: 28 local range: 18833-18861
+[ 936][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 936 -> local size: 32 local range: 24368-24400
+[ 873][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 873 -> local size: 24 local range: 22576-22600
+[  77][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 77 -> local size: 32 local range: 1923-1955
+[ 343][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 343 -> local size: 24 local range: 9226-9250
+[1101][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1101 -> local size: 31 local range: 29468-29499
+[ 485][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 485 -> local size: 25 local range: 13057-13082
+[ 204][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 204 -> local size: 26 local range: 5571-5597
+[ 424][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 424 -> local size: 27 local range: 11401-11428
+[ 300][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 300 -> local size: 27 local range: 8056-8083
+[ 780][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 780 -> local size: 29 local range: 20296-20325
+[ 536][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 536 -> local size: 21 local range: 14456-14477
+[1006][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1006 -> local size: 27 local range: 26588-26615
+[ 648][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 648 -> local size: 21 local range: 17111-17132
+[ 724][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 724 -> local size: 29 local range: 18948-18977
+[ 940][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 940 -> local size: 30 local range: 24488-24518
+[ 875][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 875 -> local size: 27 local range: 22625-22652
+[  78][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 78 -> local size: 33 local range: 1955-1988
+[ 344][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 344 -> local size: 25 local range: 9250-9275
+[1104][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1104 -> local size: 31 local range: 29559-29590
+[ 488][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 488 -> local size: 27 local range: 13131-13158
+[ 223][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 223 -> local size: 26 local range: 6034-6060
+[ 428][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 428 -> local size: 25 local range: 11509-11534
+[ 228][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 228 -> local size: 24 local range: 6160-6184
+[ 781][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 781 -> local size: 31 local range: 20325-20356
+[ 537][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 537 -> local size: 18 local range: 14477-14495
+[1008][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1008 -> local size: 28 local range: 26645-26673
+[ 650][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 650 -> local size: 19 local range: 17152-17171
+[ 728][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 728 -> local size: 24 local range: 19056-19080
+[ 944][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 944 -> local size: 32 local range: 24610-24642
+[ 876][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 876 -> local size: 30 local range: 22652-22682
+[  80][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 80 -> local size: 32 local range: 2020-2052
+[ 348][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 348 -> local size: 26 local range: 9352-9378
+[1109][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1109 -> local size: 27 local range: 29713-29740
+[ 492][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 492 -> local size: 27 local range: 13236-13263
+[ 227][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 227 -> local size: 27 local range: 6133-6160
+[ 432][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 432 -> local size: 25 local range: 11610-11635
+[ 229][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 229 -> local size: 26 local range: 6184-6210
+[ 784][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 784 -> local size: 21 local range: 20404-20425
+[ 538][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 538 -> local size: 19 local range: 14495-14514
+[1016][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1016 -> local size: 33 local range: 26881-26914
+[ 656][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 656 -> local size: 21 local range: 17292-17313
+[ 732][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 732 -> local size: 20 local range: 19142-19162
+[ 952][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 952 -> local size: 34 local range: 24855-24889
+[ 878][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 878 -> local size: 27 local range: 22711-22738
+[  81][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 81 -> local size: 32 local range: 2052-2084
+[ 355][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 355 -> local size: 28 local range: 9536-9564
+[1116][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1116 -> local size: 30 local range: 29915-29945
+[ 493][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 493 -> local size: 26 local range: 13263-13289
+[ 153][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 153 -> local size: 20 local range: 4380-4400
+[ 437][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 437 -> local size: 27 local range: 11742-11769
+[ 230][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 230 -> local size: 26 local range: 6210-6236
+[ 788][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 788 -> local size: 24 local range: 20491-20515
+[ 539][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 539 -> local size: 18 local range: 14514-14532
+[1020][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1020 -> local size: 26 local range: 27005-27031
+[ 658][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 658 -> local size: 22 local range: 17338-17360
+[ 740][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 740 -> local size: 21 local range: 19328-19349
+[ 956][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 956 -> local size: 35 local range: 24987-25022
+[ 884][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 884 -> local size: 30 local range: 22876-22906
+[  84][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 84 -> local size: 32 local range: 2149-2181
+[ 356][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 356 -> local size: 25 local range: 9564-9589
+[1118][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1118 -> local size: 29 local range: 29972-30001
+[ 494][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 494 -> local size: 28 local range: 13289-13317
+[ 154][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 154 -> local size: 23 local range: 4400-4423
+[ 440][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 440 -> local size: 24 local range: 11822-11846
+[ 231][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 231 -> local size: 29 local range: 6236-6265
+[ 789][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 789 -> local size: 24 local range: 20515-20539
+[ 541][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 541 -> local size: 20 local range: 14555-14575
+[1022][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1022 -> local size: 27 local range: 27057-27084
+[ 664][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 664 -> local size: 26 local range: 17491-17517
+[ 741][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 741 -> local size: 25 local range: 19349-19374
+[ 958][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 958 -> local size: 35 local range: 25055-25090
+[ 887][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 887 -> local size: 30 local range: 22968-22998
+[  85][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 85 -> local size: 32 local range: 2181-2213
+[ 360][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 360 -> local size: 25 local range: 9672-9697
+[1119][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1119 -> local size: 33 local range: 30001-30034
+[ 496][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 496 -> local size: 30 local range: 13343-13373
+[ 155][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 155 -> local size: 23 local range: 4423-4446
+[ 444][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 444 -> local size: 25 local range: 11929-11954
+[ 232][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 232 -> local size: 21 local range: 6265-6286
+[ 791][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 791 -> local size: 22 local range: 20564-20586
+[ 543][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 543 -> local size: 19 local range: 14599-14618
+[1024][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1024 -> local size: 30 local range: 27111-27141
+[ 668][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 668 -> local size: 26 local range: 17589-17615
+[ 744][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 744 -> local size: 22 local range: 19422-19444
+[ 960][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 960 -> local size: 31 local range: 25124-25155
+[ 888][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 888 -> local size: 30 local range: 22998-23028
+[  86][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 86 -> local size: 34 local range: 2213-2247
+[ 365][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 365 -> local size: 29 local range: 9807-9836
+[1121][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1121 -> local size: 30 local range: 30064-30094
+[ 498][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 498 -> local size: 29 local range: 13398-13427
+[ 157][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 157 -> local size: 22 local range: 4469-4491
+[ 445][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 445 -> local size: 29 local range: 11954-11983
+[ 233][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 233 -> local size: 26 local range: 6286-6312
+[ 792][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 792 -> local size: 24 local range: 20586-20610
+[ 544][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 544 -> local size: 22 local range: 14618-14640
+[1030][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1030 -> local size: 29 local range: 27294-27323
+[ 672][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 672 -> local size: 26 local range: 17692-17718
+[ 748][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 748 -> local size: 26 local range: 19519-19545
+[ 962][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 962 -> local size: 33 local range: 25182-25215
+[ 889][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 889 -> local size: 29 local range: 23028-23057
+[  87][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 87 -> local size: 36 local range: 2247-2283
+[ 368][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 368 -> local size: 29 local range: 9887-9916
+[1122][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1122 -> local size: 31 local range: 30094-30125
+[ 500][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 500 -> local size: 28 local range: 13454-13482
+[ 161][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 161 -> local size: 26 local range: 4559-4585
+[ 448][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 448 -> local size: 28 local range: 12037-12065
+[ 234][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 234 -> local size: 26 local range: 6312-6338
+[ 796][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 796 -> local size: 24 local range: 20686-20710
+[ 546][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 546 -> local size: 24 local range: 14661-14685
+[1032][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1032 -> local size: 30 local range: 27356-27386
+[ 676][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 676 -> local size: 20 local range: 17780-17800
+[ 749][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 749 -> local size: 26 local range: 19545-19571
+[ 964][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 964 -> local size: 33 local range: 25248-25281
+[ 890][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 890 -> local size: 28 local range: 23057-23085
+[  88][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 88 -> local size: 34 local range: 2283-2317
+[ 373][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 373 -> local size: 29 local range: 10030-10059
+[1124][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1124 -> local size: 31 local range: 30157-30188
+[ 501][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 501 -> local size: 25 local range: 13482-13507
+[ 162][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 162 -> local size: 26 local range: 4585-4611
+[ 380][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 380 -> local size: 25 local range: 10221-10246
+[ 235][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 235 -> local size: 24 local range: 6338-6362
+[ 797][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 797 -> local size: 26 local range: 20710-20736
+[ 548][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 548 -> local size: 24 local range: 14704-14728
+[1034][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1034 -> local size: 29 local range: 27417-27446
+[ 680][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 680 -> local size: 21 local range: 17862-17883
+[ 750][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 750 -> local size: 25 local range: 19571-19596
+[ 968][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 968 -> local size: 36 local range: 25379-25415
+[ 891][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 891 -> local size: 28 local range: 23085-23113
+[  89][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 89 -> local size: 33 local range: 2317-2350
+[ 305][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 305 -> local size: 31 local range: 8191-8222
+[1125][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1125 -> local size: 30 local range: 30188-30218
+[ 502][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 502 -> local size: 31 local range: 13507-13538
+[ 163][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 163 -> local size: 25 local range: 4611-4636
+[ 381][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 381 -> local size: 28 local range: 10246-10274
+[ 236][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 236 -> local size: 28 local range: 6362-6390
+[ 798][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 798 -> local size: 25 local range: 20736-20761
+[ 549][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 549 -> local size: 20 local range: 14728-14748
+[1038][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1038 -> local size: 29 local range: 27537-27566
+[ 610][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 610 -> local size: 30 local range: 16125-16155
+[ 751][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 751 -> local size: 30 local range: 19596-19626
+[ 970][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 970 -> local size: 34 local range: 25448-25482
+[ 892][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 892 -> local size: 29 local range: 23113-23142
+[  92][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 92 -> local size: 34 local range: 2418-2452
+[ 306][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 306 -> local size: 25 local range: 8222-8247
+[1126][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1126 -> local size: 28 local range: 30218-30246
+[ 503][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 503 -> local size: 27 local range: 13538-13565
+[ 164][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 164 -> local size: 28 local range: 4636-4664
+[ 382][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 382 -> local size: 26 local range: 10274-10300
+[ 237][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 237 -> local size: 24 local range: 6390-6414
+[ 800][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 800 -> local size: 27 local range: 20787-20814
+[ 550][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 550 -> local size: 22 local range: 14748-14770
+[1040][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1040 -> local size: 30 local range: 27595-27625
+[ 611][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 611 -> local size: 24 local range: 16155-16179
+[ 752][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 752 -> local size: 27 local range: 19626-19653
+[ 972][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 972 -> local size: 34 local range: 25517-25551
+[ 894][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 894 -> local size: 29 local range: 23171-23200
+[  93][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 93 -> local size: 36 local range: 2452-2488
+[ 307][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 307 -> local size: 31 local range: 8247-8278
+[1130][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1130 -> local size: 29 local range: 30335-30364
+[ 504][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 504 -> local size: 28 local range: 13565-13593
+[ 165][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 165 -> local size: 31 local range: 4664-4695
+[ 383][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 383 -> local size: 31 local range: 10300-10331
+[ 238][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 238 -> local size: 29 local range: 6414-6443
+[ 802][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 802 -> local size: 27 local range: 20842-20869
+[ 551][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 551 -> local size: 21 local range: 14770-14791
+[1047][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1047 -> local size: 34 local range: 27817-27851
+[ 612][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 612 -> local size: 29 local range: 16179-16208
+[ 754][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 754 -> local size: 24 local range: 19678-19702
+[ 976][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 976 -> local size: 29 local range: 25649-25678
+[ 898][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 898 -> local size: 28 local range: 23285-23313
+[  94][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 94 -> local size: 36 local range: 2488-2524
+[ 308][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 308 -> local size: 29 local range: 8278-8307
+[1131][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1131 -> local size: 34 local range: 30364-30398
+[ 506][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 506 -> local size: 26 local range: 13620-13646
+[ 166][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 166 -> local size: 20 local range: 4695-4715
+[ 384][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 384 -> local size: 23 local range: 10331-10354
+[ 239][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 239 -> local size: 24 local range: 6443-6467
+[ 804][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 804 -> local size: 26 local range: 20898-20924
+[ 552][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 552 -> local size: 25 local range: 14791-14816
+[1048][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1048 -> local size: 33 local range: 27851-27884
+[ 613][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 613 -> local size: 27 local range: 16208-16235
+[ 756][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 756 -> local size: 20 local range: 19729-19749
+[ 978][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 978 -> local size: 32 local range: 25708-25740
+[ 901][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 901 -> local size: 32 local range: 23374-23406
+[  98][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 98 -> local size: 33 local range: 2621-2654
+[ 309][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 309 -> local size: 28 local range: 8307-8335
+[1132][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1132 -> local size: 36 local range: 30398-30434
+[ 508][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 508 -> local size: 26 local range: 13675-13701
+[ 167][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 167 -> local size: 23 local range: 4715-4738
+[ 385][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 385 -> local size: 27 local range: 10354-10381
+[ 240][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 240 -> local size: 27 local range: 6467-6494
+[ 806][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 806 -> local size: 27 local range: 20953-20980
+[ 554][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 554 -> local size: 25 local range: 14838-14863
+[1049][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1049 -> local size: 28 local range: 27884-27912
+[ 614][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 614 -> local size: 31 local range: 16235-16266
+[ 757][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 757 -> local size: 17 local range: 19749-19766
+[ 980][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 980 -> local size: 36 local range: 25771-25807
+[ 907][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 907 -> local size: 24 local range: 23542-23566
+[ 100][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 100 -> local size: 32 local range: 2685-2717
+[ 310][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 310 -> local size: 26 local range: 8335-8361
+[1134][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1134 -> local size: 39 local range: 30467-30506
+[ 509][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 509 -> local size: 25 local range: 13701-13726
+[ 168][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 168 -> local size: 22 local range: 4738-4760
+[ 386][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 386 -> local size: 25 local range: 10381-10406
+[ 241][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 241 -> local size: 25 local range: 6494-6519
+[ 807][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 807 -> local size: 27 local range: 20980-21007
+[ 555][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 555 -> local size: 25 local range: 14863-14888
+[1055][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1055 -> local size: 32 local range: 28069-28101
+[ 615][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 615 -> local size: 30 local range: 16266-16296
+[ 685][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 685 -> local size: 21 local range: 17972-17993
+[ 982][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 982 -> local size: 34 local range: 25843-25877
+[ 908][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 908 -> local size: 29 local range: 23566-23595
+[ 101][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 101 -> local size: 33 local range: 2717-2750
+[ 313][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 313 -> local size: 27 local range: 8416-8443
+[1135][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1135 -> local size: 33 local range: 30506-30539
+[ 510][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 510 -> local size: 23 local range: 13726-13749
+[ 169][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 169 -> local size: 25 local range: 4760-4785
+[ 387][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 387 -> local size: 28 local range: 10406-10434
+[ 242][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 242 -> local size: 25 local range: 6519-6544
+[ 808][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 808 -> local size: 27 local range: 21007-21034
+[ 557][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 557 -> local size: 23 local range: 14910-14933
+[1061][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1061 -> local size: 30 local range: 28254-28284
+[ 616][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 616 -> local size: 28 local range: 16296-16324
+[ 686][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 686 -> local size: 19 local range: 17993-18012
+[ 983][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 983 -> local size: 32 local range: 25877-25909
+[ 910][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 910 -> local size: 28 local range: 23620-23648
+[ 102][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 102 -> local size: 32 local range: 2750-2782
+[ 314][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 314 -> local size: 31 local range: 8443-8474
+[1136][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1136 -> local size: 35 local range: 30539-30574
+[ 511][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 511 -> local size: 25 local range: 13749-13774
+[ 170][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 170 -> local size: 18 local range: 4785-4803
+[ 389][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 389 -> local size: 33 local range: 10459-10492
+[ 243][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 243 -> local size: 26 local range: 6544-6570
+[ 812][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 812 -> local size: 20 local range: 21096-21116
+[ 559][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 559 -> local size: 24 local range: 14956-14980
+[1062][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1062 -> local size: 33 local range: 28284-28317
+[ 618][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 618 -> local size: 26 local range: 16350-16376
+[ 687][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 687 -> local size: 23 local range: 18012-18035
+[ 987][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 987 -> local size: 38 local range: 26013-26051
+[ 837][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 837 -> local size: 18 local range: 21692-21710
+[ 103][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 103 -> local size: 32 local range: 2782-2814
+[ 315][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 315 -> local size: 27 local range: 8474-8501
+[1137][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1137 -> local size: 32 local range: 30574-30606
+[ 512][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 512 -> local size: 28 local range: 13774-13802
+[ 171][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 171 -> local size: 23 local range: 4803-4826
+[ 390][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 390 -> local size: 26 local range: 10492-10518
+[ 244][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 244 -> local size: 26 local range: 6570-6596
+[ 813][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 813 -> local size: 19 local range: 21116-21135
+[ 561][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 561 -> local size: 24 local range: 15007-15031
+[ 991][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 991 -> local size: 27 local range: 26151-26178
+[ 619][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 619 -> local size: 25 local range: 16376-16401
+[ 688][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 688 -> local size: 21 local range: 18035-18056
+[ 913][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 913 -> local size: 31 local range: 23705-23736
+[ 838][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 838 -> local size: 23 local range: 21710-21733
+[ 104][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 104 -> local size: 31 local range: 2814-2845
+[ 318][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 318 -> local size: 26 local range: 8559-8585
+[1138][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1138 -> local size: 37 local range: 30606-30643
+[ 513][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 513 -> local size: 27 local range: 13802-13829
+[ 174][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 174 -> local size: 25 local range: 4872-4897
+[ 391][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 391 -> local size: 29 local range: 10518-10547
+[ 245][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 245 -> local size: 27 local range: 6596-6623
+[ 814][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 814 -> local size: 24 local range: 21135-21159
+[ 562][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 562 -> local size: 23 local range: 15031-15054
+[ 993][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 993 -> local size: 30 local range: 26205-26235
+[ 620][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 620 -> local size: 27 local range: 16401-16428
+[ 689][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 689 -> local size: 25 local range: 18056-18081
+[ 914][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 914 -> local size: 28 local range: 23736-23764
+[ 839][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 839 -> local size: 19 local range: 21733-21752
+[ 105][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 105 -> local size: 31 local range: 2845-2876
+[ 319][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 319 -> local size: 28 local range: 8585-8613
+[1139][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1139 -> local size: 30 local range: 30643-30673
+[ 514][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 514 -> local size: 28 local range: 13829-13857
+[ 175][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 175 -> local size: 23 local range: 4897-4920
+[ 393][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 393 -> local size: 24 local range: 10579-10603
+[ 246][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 246 -> local size: 27 local range: 6623-6650
+[ 815][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 815 -> local size: 22 local range: 21159-21181
+[ 564][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 564 -> local size: 22 local range: 15079-15101
+[ 994][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 994 -> local size: 28 local range: 26235-26263
+[ 621][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 621 -> local size: 22 local range: 16428-16450
+[ 690][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 690 -> local size: 22 local range: 18081-18103
+[ 915][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 915 -> local size: 30 local range: 23764-23794
+[ 840][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 840 -> local size: 22 local range: 21752-21774
+[ 106][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 106 -> local size: 32 local range: 2876-2908
+[ 321][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 321 -> local size: 28 local range: 8639-8667
+[1064][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1064 -> local size: 32 local range: 28351-28383
+[ 519][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 519 -> local size: 26 local range: 13970-13996
+[ 176][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 176 -> local size: 25 local range: 4920-4945
+[ 394][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 394 -> local size: 26 local range: 10603-10629
+[ 247][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 247 -> local size: 27 local range: 6650-6677
+[ 816][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 816 -> local size: 21 local range: 21181-21202
+[ 565][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 565 -> local size: 18 local range: 15101-15119
+[ 995][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 995 -> local size: 25 local range: 26263-26288
+[ 622][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 622 -> local size: 21 local range: 16450-16471
+[ 691][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 691 -> local size: 26 local range: 18103-18129
+[ 919][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 919 -> local size: 27 local range: 23876-23903
+[ 841][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 841 -> local size: 21 local range: 21774-21795
+[ 107][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 107 -> local size: 32 local range: 2908-2940
+[ 322][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 322 -> local size: 25 local range: 8667-8692
+[1065][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1065 -> local size: 33 local range: 28383-28416
+[ 520][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 520 -> local size: 30 local range: 13996-14026
+[ 177][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 177 -> local size: 26 local range: 4945-4971
+[ 395][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 395 -> local size: 28 local range: 10629-10657
+[ 249][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 249 -> local size: 29 local range: 6703-6732
+[ 818][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 818 -> local size: 22 local range: 21228-21250
+[ 566][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 566 -> local size: 18 local range: 15119-15137
+[ 998][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 998 -> local size: 28 local range: 26347-26375
+[ 623][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 623 -> local size: 20 local range: 16471-16491
+[ 692][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 692 -> local size: 23 local range: 18129-18152
+[ 921][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 921 -> local size: 28 local range: 23932-23960
+[ 842][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 842 -> local size: 26 local range: 21795-21821
+[ 108][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 108 -> local size: 36 local range: 2940-2976
+[ 324][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 324 -> local size: 24 local range: 8722-8746
+[1066][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1066 -> local size: 32 local range: 28416-28448
+[ 521][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 521 -> local size: 27 local range: 14026-14053
+[ 178][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 178 -> local size: 26 local range: 4971-4997
+[ 397][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 397 -> local size: 26 local range: 10689-10715
+[ 250][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 250 -> local size: 26 local range: 6732-6758
+[ 819][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 819 -> local size: 24 local range: 21250-21274
+[ 567][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 567 -> local size: 22 local range: 15137-15159
+[1001][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1001 -> local size: 31 local range: 26434-26465
+[ 625][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 625 -> local size: 23 local range: 16511-16534
+[ 693][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 693 -> local size: 24 local range: 18152-18176
+[ 922][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 922 -> local size: 29 local range: 23960-23989
+[ 843][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 843 -> local size: 23 local range: 21821-21844
+[ 109][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 109 -> local size: 33 local range: 2976-3009
+[ 325][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 325 -> local size: 29 local range: 8746-8775
+[1067][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1067 -> local size: 34 local range: 28448-28482
+[ 522][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 522 -> local size: 31 local range: 14053-14084
+[ 179][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 179 -> local size: 21 local range: 4997-5018
+[ 398][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 398 -> local size: 28 local range: 10715-10743
+[ 251][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 251 -> local size: 29 local range: 6758-6787
+[ 821][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 821 -> local size: 22 local range: 21298-21320
+[ 570][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 570 -> local size: 24 local range: 15197-15221
+[1002][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1002 -> local size: 32 local range: 26465-26497
+[ 626][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 626 -> local size: 24 local range: 16534-16558
+[ 694][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 694 -> local size: 26 local range: 18176-18202
+[ 923][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 923 -> local size: 25 local range: 23989-24014
+[ 844][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 844 -> local size: 26 local range: 21844-21870
+[ 110][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 110 -> local size: 32 local range: 3009-3041
+[ 326][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 326 -> local size: 25 local range: 8775-8800
+[1068][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1068 -> local size: 31 local range: 28482-28513
+[ 523][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 523 -> local size: 24 local range: 14084-14108
+[ 180][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 180 -> local size: 23 local range: 5018-5041
+[ 399][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 399 -> local size: 26 local range: 10743-10769
+[ 252][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 252 -> local size: 28 local range: 6787-6815
+[ 824][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 824 -> local size: 25 local range: 21366-21391
+[ 572][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 572 -> local size: 24 local range: 15243-15267
+[1003][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1003 -> local size: 29 local range: 26497-26526
+[ 627][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 627 -> local size: 26 local range: 16558-16584
+[ 695][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 695 -> local size: 30 local range: 18202-18232
+[ 924][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 924 -> local size: 30 local range: 24014-24044
+[ 845][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 845 -> local size: 22 local range: 21870-21892
+[ 117][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 117 -> local size: 32 local range: 3244-3276
+[ 327][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 327 -> local size: 30 local range: 8800-8830
+[1069][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1069 -> local size: 37 local range: 28513-28550
+[ 524][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 524 -> local size: 31 local range: 14108-14139
+[ 181][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 181 -> local size: 24 local range: 5041-5065
+[ 401][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 401 -> local size: 29 local range: 10796-10825
+[ 253][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 253 -> local size: 29 local range: 6815-6844
+[ 825][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 825 -> local size: 22 local range: 21391-21413
+[ 573][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 573 -> local size: 21 local range: 15267-15288
+[1005][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1005 -> local size: 28 local range: 26560-26588
+[ 628][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 628 -> local size: 23 local range: 16584-16607
+[ 697][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 697 -> local size: 30 local range: 18259-18289
+[ 925][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 925 -> local size: 30 local range: 24044-24074
+[ 846][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 846 -> local size: 24 local range: 21892-21916
+[ 118][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 118 -> local size: 31 local range: 3276-3307
+[ 329][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 329 -> local size: 30 local range: 8856-8886
+[1070][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1070 -> local size: 34 local range: 28550-28584
+[ 525][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 525 -> local size: 23 local range: 14139-14162
+[ 182][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 182 -> local size: 23 local range: 5065-5088
+[ 402][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 402 -> local size: 24 local range: 10825-10849
+[ 254][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 254 -> local size: 18 local range: 6844-6862
+[ 826][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 826 -> local size: 26 local range: 21413-21439
+[ 575][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 575 -> local size: 23 local range: 15313-15336
+[1007][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1007 -> local size: 30 local range: 26615-26645
+[ 629][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 629 -> local size: 24 local range: 16607-16631
+[ 698][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 698 -> local size: 29 local range: 18289-18318
+[ 926][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 926 -> local size: 30 local range: 24074-24104
+[ 847][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 847 -> local size: 23 local range: 21916-21939
+[ 121][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 121 -> local size: 33 local range: 3373-3406
+[ 330][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 330 -> local size: 24 local range: 8886-8910
+[1071][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1071 -> local size: 30 local range: 28584-28614
+[ 526][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 526 -> local size: 31 local range: 14162-14193
+[ 184][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 184 -> local size: 24 local range: 5106-5130
+[ 403][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 403 -> local size: 26 local range: 10849-10875
+[ 255][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 255 -> local size: 25 local range: 6862-6887
+[ 828][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 828 -> local size: 26 local range: 21466-21492
+[ 578][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 578 -> local size: 26 local range: 15378-15404
+[1009][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1009 -> local size: 30 local range: 26673-26703
+[ 630][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 630 -> local size: 24 local range: 16631-16655
+[ 699][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 699 -> local size: 30 local range: 18318-18348
+[ 927][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 927 -> local size: 32 local range: 24104-24136
+[ 848][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 848 -> local size: 22 local range: 21939-21961
+[ 123][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 123 -> local size: 32 local range: 3439-3471
+[ 331][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 331 -> local size: 28 local range: 8910-8938
+[1072][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1072 -> local size: 30 local range: 28614-28644
+[ 528][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 528 -> local size: 30 local range: 14218-14248
+[ 185][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 185 -> local size: 21 local range: 5130-5151
+[ 406][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 406 -> local size: 25 local range: 10926-10951
+[ 257][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 257 -> local size: 25 local range: 6912-6937
+[ 829][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 829 -> local size: 26 local range: 21492-21518
+[ 579][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 579 -> local size: 20 local range: 15404-15424
+[1010][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1010 -> local size: 29 local range: 26703-26732
+[ 631][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 631 -> local size: 26 local range: 16655-16681
+[ 700][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 700 -> local size: 27 local range: 18348-18375
+[ 929][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 929 -> local size: 31 local range: 24166-24197
+[ 849][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 849 -> local size: 23 local range: 21961-21984
+[ 125][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 125 -> local size: 32 local range: 3503-3535
+[ 333][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 333 -> local size: 29 local range: 8963-8992
+[1073][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1073 -> local size: 33 local range: 28644-28677
+[ 530][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 530 -> local size: 30 local range: 14275-14305
+[ 186][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 186 -> local size: 26 local range: 5151-5177
+[ 409][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 409 -> local size: 28 local range: 11006-11034
+[ 258][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 258 -> local size: 27 local range: 6937-6964
+[ 831][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 831 -> local size: 26 local range: 21542-21568
+[ 580][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 580 -> local size: 26 local range: 15424-15450
+[1011][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1011 -> local size: 30 local range: 26732-26762
+[ 633][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 633 -> local size: 24 local range: 16705-16729
+[ 701][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 701 -> local size: 25 local range: 18375-18400
+[ 930][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 930 -> local size: 31 local range: 24197-24228
+[ 850][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 850 -> local size: 23 local range: 21984-22007
+[ 126][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 126 -> local size: 33 local range: 3535-3568
+[ 334][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 334 -> local size: 24 local range: 8992-9016
+[1074][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1074 -> local size: 32 local range: 28677-28709
+[ 531][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 531 -> local size: 28 local range: 14305-14333
+[ 187][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 187 -> local size: 21 local range: 5177-5198
+[ 410][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 410 -> local size: 26 local range: 11034-11060
+[ 259][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 259 -> local size: 26 local range: 6964-6990
+[ 832][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 832 -> local size: 25 local range: 21568-21593
+[ 581][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 581 -> local size: 22 local range: 15450-15472
+[1012][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1012 -> local size: 29 local range: 26762-26791
+[ 634][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 634 -> local size: 24 local range: 16729-16753
+[1141][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1141 -> local size: 32 local range: 30703-30735
+[ 702][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 702 -> local size: 20 local range: 18400-18420
+[ 931][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 931 -> local size: 26 local range: 24228-24254
+[ 851][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 851 -> local size: 25 local range: 22007-22032
+[ 127][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 127 -> local size: 32 local range: 3568-3600
+[ 335][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 335 -> local size: 30 local range: 9016-9046
+[1075][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1075 -> local size: 32 local range: 28709-28741
+[ 457][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 457 -> local size: 26 local range: 12291-12317
+[ 188][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 188 -> local size: 26 local range: 5198-5224
+[ 411][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 411 -> local size: 23 local range: 11060-11083
+[ 260][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 260 -> local size: 23 local range: 6990-7013
+[ 833][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 833 -> local size: 25 local range: 21593-21618
+[ 582][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 582 -> local size: 24 local range: 15472-15496
+[1013][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1013 -> local size: 28 local range: 26791-26819
+[ 635][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 635 -> local size: 25 local range: 16753-16778
+[ 703][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 703 -> local size: 22 local range: 18420-18442
+[ 932][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 932 -> local size: 30 local range: 24254-24284
+[ 852][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 852 -> local size: 25 local range: 22032-22057
+[ 129][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 129 -> local size: 34 local range: 3633-3667
+[ 337][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 337 -> local size: 24 local range: 9076-9100
+[1076][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1076 -> local size: 30 local range: 28741-28771
+[ 458][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 458 -> local size: 28 local range: 12317-12345
+[ 190][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 190 -> local size: 27 local range: 5252-5279
+[ 414][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 414 -> local size: 28 local range: 11137-11165
+[ 261][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 261 -> local size: 25 local range: 7013-7038
+[ 834][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 834 -> local size: 26 local range: 21618-21644
+[ 583][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 583 -> local size: 25 local range: 15496-15521
+[1014][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1014 -> local size: 31 local range: 26819-26850
+[ 636][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 636 -> local size: 28 local range: 16778-16806
+[1143][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1143 -> local size: 30 local range: 30767-30797
+[ 704][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 704 -> local size: 19 local range: 18442-18461
+[ 933][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 933 -> local size: 29 local range: 24284-24313
+[ 853][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 853 -> local size: 26 local range: 22057-22083
+[ 130][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 130 -> local size: 36 local range: 3667-3703
+[ 338][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 338 -> local size: 24 local range: 9100-9124
+[1077][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1077 -> local size: 31 local range: 28771-28802
+[ 459][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 459 -> local size: 26 local range: 12345-12371
+[ 191][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 191 -> local size: 24 local range: 5279-5303
+[ 415][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 415 -> local size: 27 local range: 11165-11192
+[ 262][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 262 -> local size: 23 local range: 7038-7061
+[ 761][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 761 -> local size: 23 local range: 19832-19855
+[ 584][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 584 -> local size: 25 local range: 15521-15546
+[1015][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1015 -> local size: 31 local range: 26850-26881
+[ 637][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 637 -> local size: 30 local range: 16806-16836
+[1151][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1151 -> local size: 30 local range: 31024-31054
+[ 705][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 705 -> local size: 24 local range: 18461-18485
+[ 935][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 935 -> local size: 26 local range: 24342-24368
+[ 857][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 857 -> local size: 25 local range: 22163-22188
+[ 131][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 131 -> local size: 32 local range: 3703-3735
+[ 339][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 339 -> local size: 24 local range: 9124-9148
+[1078][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1078 -> local size: 33 local range: 28802-28835
+[ 461][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 461 -> local size: 24 local range: 12399-12423
+[ 192][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 192 -> local size: 21 local range: 5303-5324
+[ 417][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 417 -> local size: 27 local range: 11219-11246
+[ 263][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 263 -> local size: 23 local range: 7061-7084
+[ 762][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 762 -> local size: 22 local range: 19855-19877
+[ 586][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 586 -> local size: 25 local range: 15571-15596
+[1017][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1017 -> local size: 32 local range: 26914-26946
+[ 638][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 638 -> local size: 27 local range: 16836-16863
+[1154][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1154 -> local size: 32 local range: 31115-31147
+[ 707][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 707 -> local size: 25 local range: 18509-18534
+[ 937][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 937 -> local size: 28 local range: 24400-24428
+[ 858][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 858 -> local size: 27 local range: 22188-22215
+[ 133][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 133 -> local size: 34 local range: 3767-3801
+[ 340][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 340 -> local size: 26 local range: 9148-9174
+[1079][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1079 -> local size: 27 local range: 28835-28862
+[ 463][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 463 -> local size: 26 local range: 12451-12477
+[ 193][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 193 -> local size: 22 local range: 5324-5346
+[ 418][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 418 -> local size: 28 local range: 11246-11274
+[ 265][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 265 -> local size: 24 local range: 7110-7134
+[ 763][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 763 -> local size: 24 local range: 19877-19901
+[ 587][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 587 -> local size: 26 local range: 15596-15622
+[1018][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1018 -> local size: 30 local range: 26946-26976
+[ 640][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 640 -> local size: 29 local range: 16890-16919
+[1165][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1165 -> local size: 34 local range: 31470-31504
+[ 708][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 708 -> local size: 24 local range: 18534-18558
+[ 938][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 938 -> local size: 30 local range: 24428-24458
+[ 859][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 859 -> local size: 29 local range: 22215-22244
+[ 134][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 134 -> local size: 35 local range: 3801-3836
+[ 341][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 341 -> local size: 27 local range: 9174-9201
+[1080][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1080 -> local size: 27 local range: 28862-28889
+[ 465][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 465 -> local size: 23 local range: 12505-12528
+[ 194][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 194 -> local size: 24 local range: 5346-5370
+[ 419][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 419 -> local size: 29 local range: 11274-11303
+[ 266][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 266 -> local size: 29 local range: 7134-7163
+[ 764][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 764 -> local size: 23 local range: 19901-19924
+[ 589][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 589 -> local size: 26 local range: 15650-15676
+[1019][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1019 -> local size: 29 local range: 26976-27005
+[ 641][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 641 -> local size: 30 local range: 16919-16949
+[1167][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1167 -> local size: 31 local range: 31534-31565
+[ 710][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 710 -> local size: 23 local range: 18584-18607
+[ 939][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 939 -> local size: 30 local range: 24458-24488
+[ 861][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 861 -> local size: 28 local range: 22270-22298
+[ 135][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 135 -> local size: 34 local range: 3836-3870
+[ 342][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 342 -> local size: 25 local range: 9201-9226
+[1082][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1082 -> local size: 28 local range: 28919-28947
+[ 466][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 466 -> local size: 29 local range: 12528-12557
+[ 195][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 195 -> local size: 24 local range: 5370-5394
+[ 420][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 420 -> local size: 29 local range: 11303-11332
+[ 267][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 267 -> local size: 24 local range: 7163-7187
+[ 767][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 767 -> local size: 23 local range: 19972-19995
+[ 590][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 590 -> local size: 24 local range: 15676-15700
+[1021][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1021 -> local size: 26 local range: 27031-27057
+[ 642][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 642 -> local size: 30 local range: 16949-16979
+[1169][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1169 -> local size: 26 local range: 31599-31625
+[ 711][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 711 -> local size: 24 local range: 18607-18631
+[ 941][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 941 -> local size: 31 local range: 24518-24549
+[ 862][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 862 -> local size: 27 local range: 22298-22325
+[ 137][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 137 -> local size: 31 local range: 3904-3935
+[ 345][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 345 -> local size: 24 local range: 9275-9299
+[1083][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1083 -> local size: 28 local range: 28947-28975
+[ 467][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 467 -> local size: 24 local range: 12557-12581
+[ 196][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 196 -> local size: 20 local range: 5394-5414
+[ 421][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 421 -> local size: 20 local range: 11332-11352
+[ 268][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 268 -> local size: 29 local range: 7187-7216
+[ 769][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 769 -> local size: 22 local range: 20019-20041
+[ 593][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 593 -> local size: 19 local range: 15747-15766
+[1023][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1023 -> local size: 27 local range: 27084-27111
+[ 643][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 643 -> local size: 31 local range: 16979-17010
+[1173][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1173 -> local size: 27 local range: 31710-31737
+[ 713][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 713 -> local size: 25 local range: 18655-18680
+[ 942][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 942 -> local size: 30 local range: 24549-24579
+[ 863][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 863 -> local size: 25 local range: 22325-22350
+[ 138][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 138 -> local size: 31 local range: 3935-3966
+[ 346][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 346 -> local size: 28 local range: 9299-9327
+[1084][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1084 -> local size: 27 local range: 28975-29002
+[ 468][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 468 -> local size: 29 local range: 12581-12610
+[ 197][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 197 -> local size: 22 local range: 5414-5436
+[ 422][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 422 -> local size: 24 local range: 11352-11376
+[ 269][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 269 -> local size: 25 local range: 7216-7241
+[ 770][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 770 -> local size: 23 local range: 20041-20064
+[ 594][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 594 -> local size: 19 local range: 15766-15785
+[1025][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1025 -> local size: 31 local range: 27141-27172
+[ 645][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 645 -> local size: 29 local range: 17037-17066
+[1178][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1178 -> local size: 26 local range: 31851-31877
+[ 714][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 714 -> local size: 28 local range: 18680-18708
+[ 943][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 943 -> local size: 31 local range: 24579-24610
+[ 864][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 864 -> local size: 24 local range: 22350-22374
+[ 139][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 139 -> local size: 32 local range: 3966-3998
+[ 347][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 347 -> local size: 25 local range: 9327-9352
+[1085][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1085 -> local size: 30 local range: 29002-29032
+[ 469][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 469 -> local size: 25 local range: 12610-12635
+[ 198][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 198 -> local size: 23 local range: 5436-5459
+[ 423][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 423 -> local size: 25 local range: 11376-11401
+[ 270][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 270 -> local size: 29 local range: 7241-7270
+[ 771][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 771 -> local size: 22 local range: 20064-20086
+[ 595][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 595 -> local size: 22 local range: 15785-15807
+[1026][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1026 -> local size: 30 local range: 27172-27202
+[ 646][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 646 -> local size: 27 local range: 17066-17093
+[1179][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1179 -> local size: 29 local range: 31877-31906
+[ 715][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 715 -> local size: 25 local range: 18708-18733
+[ 945][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 945 -> local size: 28 local range: 24642-24670
+[ 865][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 865 -> local size: 23 local range: 22374-22397
+[ 140][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 140 -> local size: 34 local range: 3998-4032
+[ 349][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 349 -> local size: 24 local range: 9378-9402
+[1086][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1086 -> local size: 30 local range: 29032-29062
+[ 470][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 470 -> local size: 30 local range: 12635-12665
+[ 199][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 199 -> local size: 24 local range: 5459-5483
+[ 425][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 425 -> local size: 28 local range: 11428-11456
+[ 271][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 271 -> local size: 24 local range: 7270-7294
+[ 772][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 772 -> local size: 23 local range: 20086-20109
+[ 596][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 596 -> local size: 19 local range: 15807-15826
+[1027][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1027 -> local size: 29 local range: 27202-27231
+[ 649][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 649 -> local size: 20 local range: 17132-17152
+[1184][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1184 -> local size: 30 local range: 32027-32057
+[ 717][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 717 -> local size: 22 local range: 18758-18780
+[ 946][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 946 -> local size: 32 local range: 24670-24702
+[ 866][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 866 -> local size: 25 local range: 22397-22422
+[ 141][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 141 -> local size: 34 local range: 4032-4066
+[ 350][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 350 -> local size: 28 local range: 9402-9430
+[1087][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1087 -> local size: 30 local range: 29062-29092
+[ 471][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 471 -> local size: 26 local range: 12665-12691
+[ 200][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 200 -> local size: 19 local range: 5483-5502
+[ 426][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 426 -> local size: 29 local range: 11456-11485
+[ 272][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 272 -> local size: 28 local range: 7294-7322
+[ 775][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 775 -> local size: 25 local range: 20157-20182
+[ 597][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 597 -> local size: 23 local range: 15826-15849
+[1028][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1028 -> local size: 32 local range: 27231-27263
+[ 651][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 651 -> local size: 22 local range: 17171-17193
+[1188][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1188 -> local size: 32 local range: 32147-32179
+[ 718][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 718 -> local size: 28 local range: 18780-18808
+[ 947][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 947 -> local size: 26 local range: 24702-24728
+[ 867][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 867 -> local size: 28 local range: 22422-22450
+[ 142][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 142 -> local size: 32 local range: 4066-4098
+[ 351][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 351 -> local size: 27 local range: 9430-9457
+[1088][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1088 -> local size: 28 local range: 29092-29120
+[ 473][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 473 -> local size: 28 local range: 12720-12748
+[ 201][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 201 -> local size: 23 local range: 5502-5525
+[ 427][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 427 -> local size: 24 local range: 11485-11509
+[ 273][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 273 -> local size: 24 local range: 7322-7346
+[ 777][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 777 -> local size: 27 local range: 20211-20238
+[ 598][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 598 -> local size: 24 local range: 15849-15873
+[1029][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1029 -> local size: 31 local range: 27263-27294
+[ 652][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 652 -> local size: 27 local range: 17193-17220
+[1195][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1195 -> local size: 33 local range: 32364-32397
+[ 719][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 719 -> local size: 25 local range: 18808-18833
+[ 948][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 948 -> local size: 31 local range: 24728-24759
+[ 868][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 868 -> local size: 26 local range: 22450-22476
+[ 145][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 145 -> local size: 32 local range: 4162-4194
+[ 352][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 352 -> local size: 28 local range: 9457-9485
+[1089][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1089 -> local size: 27 local range: 29120-29147
+[ 474][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 474 -> local size: 30 local range: 12748-12778
+[ 202][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 202 -> local size: 21 local range: 5525-5546
+[ 429][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 429 -> local size: 23 local range: 11534-11557
+[ 274][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 274 -> local size: 30 local range: 7346-7376
+[ 778][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 778 -> local size: 31 local range: 20238-20269
+[ 601][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 601 -> local size: 22 local range: 15922-15944
+[1031][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1031 -> local size: 33 local range: 27323-27356
+[ 653][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 653 -> local size: 23 local range: 17220-17243
+[1196][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1196 -> local size: 30 local range: 32397-32427
+[ 721][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 721 -> local size: 27 local range: 18861-18888
+[ 949][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 949 -> local size: 29 local range: 24759-24788
+[ 869][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 869 -> local size: 25 local range: 22476-22501
+[ 146][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 146 -> local size: 34 local range: 4194-4228
+[ 353][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 353 -> local size: 25 local range: 9485-9510
+[1091][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1091 -> local size: 27 local range: 29176-29203
+[ 475][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 475 -> local size: 28 local range: 12778-12806
+[ 203][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 203 -> local size: 25 local range: 5546-5571
+[ 430][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 430 -> local size: 27 local range: 11557-11584
+[ 275][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 275 -> local size: 24 local range: 7376-7400
+[ 779][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 779 -> local size: 27 local range: 20269-20296
+[ 602][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 602 -> local size: 25 local range: 15944-15969
+[1033][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1033 -> local size: 31 local range: 27386-27417
+[ 654][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 654 -> local size: 25 local range: 17243-17268
+[1198][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1198 -> local size: 30 local range: 32461-32491
+[ 722][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 722 -> local size: 31 local range: 18888-18919
+[ 950][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 950 -> local size: 33 local range: 24788-24821
+[ 870][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 870 -> local size: 26 local range: 22501-22527
+[ 147][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 147 -> local size: 32 local range: 4228-4260
+[ 354][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 354 -> local size: 26 local range: 9510-9536
+[1092][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1092 -> local size: 30 local range: 29203-29233
+[ 477][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 477 -> local size: 26 local range: 12834-12860
+[ 205][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 205 -> local size: 24 local range: 5597-5621
+[ 431][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 431 -> local size: 26 local range: 11584-11610
+[ 276][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 276 -> local size: 29 local range: 7400-7429
+[ 782][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 782 -> local size: 27 local range: 20356-20383
+[ 603][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 603 -> local size: 20 local range: 15969-15989
+[1035][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1035 -> local size: 30 local range: 27446-27476
+[ 655][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 655 -> local size: 24 local range: 17268-17292
+[1201][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1201 -> local size: 29 local range: 32548-32577
+[ 723][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 723 -> local size: 29 local range: 18919-18948
+[ 951][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 951 -> local size: 34 local range: 24821-24855
+[ 871][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 871 -> local size: 25 local range: 22527-22552
+[ 148][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 148 -> local size: 31 local range: 4260-4291
+[ 357][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 357 -> local size: 28 local range: 9589-9617
+[1094][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1094 -> local size: 29 local range: 29263-29292
+[ 479][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 479 -> local size: 26 local range: 12888-12914
+[ 206][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 206 -> local size: 19 local range: 5621-5640
+[ 433][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 433 -> local size: 29 local range: 11635-11664
+[ 277][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 277 -> local size: 25 local range: 7429-7454
+[ 783][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 783 -> local size: 21 local range: 20383-20404
+[ 604][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 604 -> local size: 24 local range: 15989-16013
+[1036][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1036 -> local size: 31 local range: 27476-27507
+[ 657][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 657 -> local size: 25 local range: 17313-17338
+[1203][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1203 -> local size: 31 local range: 32604-32635
+[ 725][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 725 -> local size: 27 local range: 18977-19004
+[ 953][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 953 -> local size: 29 local range: 24889-24918
+[ 872][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 872 -> local size: 24 local range: 22552-22576
+[ 149][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 149 -> local size: 20 local range: 4291-4311
+[ 358][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 358 -> local size: 25 local range: 9617-9642
+[1095][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1095 -> local size: 32 local range: 29292-29324
+[ 481][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 481 -> local size: 30 local range: 12944-12974
+[ 207][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 207 -> local size: 23 local range: 5640-5663
+[ 434][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 434 -> local size: 25 local range: 11664-11689
+[ 278][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 278 -> local size: 29 local range: 7454-7483
+[ 785][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 785 -> local size: 26 local range: 20425-20451
+[ 605][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 605 -> local size: 21 local range: 16013-16034
+[1037][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1037 -> local size: 30 local range: 27507-27537
+[ 659][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 659 -> local size: 26 local range: 17360-17386
+[1205][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1205 -> local size: 31 local range: 32662-32693
+[ 726][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 726 -> local size: 28 local range: 19004-19032
+[ 954][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 954 -> local size: 35 local range: 24918-24953
+[ 874][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 874 -> local size: 25 local range: 22600-22625
+[ 150][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 150 -> local size: 22 local range: 4311-4333
+[ 359][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 359 -> local size: 30 local range: 9642-9672
+[1096][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1096 -> local size: 27 local range: 29324-29351
+[ 482][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 482 -> local size: 28 local range: 12974-13002
+[ 208][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 208 -> local size: 24 local range: 5663-5687
+[ 435][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 435 -> local size: 29 local range: 11689-11718
+[ 279][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 279 -> local size: 24 local range: 7483-7507
+[ 786][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 786 -> local size: 18 local range: 20451-20469
+[ 606][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 606 -> local size: 24 local range: 16034-16058
+[1039][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1039 -> local size: 29 local range: 27566-27595
+[ 660][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 660 -> local size: 23 local range: 17386-17409
+[1208][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1208 -> local size: 31 local range: 32758-32789
+[ 727][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 727 -> local size: 24 local range: 19032-19056
+[ 955][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 955 -> local size: 34 local range: 24953-24987
+[ 877][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 877 -> local size: 29 local range: 22682-22711
+[ 151][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 151 -> local size: 22 local range: 4333-4355
+[ 361][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 361 -> local size: 30 local range: 9697-9727
+[1097][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1097 -> local size: 28 local range: 29351-29379
+[ 483][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 483 -> local size: 28 local range: 13002-13030
+[ 209][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 209 -> local size: 27 local range: 5687-5714
+[ 436][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 436 -> local size: 24 local range: 11718-11742
+[ 281][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 281 -> local size: 27 local range: 7538-7565
+[ 787][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 787 -> local size: 22 local range: 20469-20491
+[ 534][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 534 -> local size: 31 local range: 14392-14423
+[1041][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1041 -> local size: 28 local range: 27625-27653
+[ 661][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 661 -> local size: 28 local range: 17409-17437
+[1209][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1209 -> local size: 32 local range: 32789-32821
+[ 729][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 729 -> local size: 19 local range: 19080-19099
+[ 957][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 957 -> local size: 33 local range: 25022-25055
+[ 879][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 879 -> local size: 29 local range: 22738-22767
+[  79][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 79 -> local size: 32 local range: 1988-2020
+[ 362][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 362 -> local size: 25 local range: 9727-9752
+[1098][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1098 -> local size: 31 local range: 29379-29410
+[ 484][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 484 -> local size: 27 local range: 13030-13057
+[ 210][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 210 -> local size: 20 local range: 5714-5734
+[ 438][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 438 -> local size: 24 local range: 11769-11793
+[ 282][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 282 -> local size: 27 local range: 7565-7592
+[ 790][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 790 -> local size: 25 local range: 20539-20564
+[ 540][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 540 -> local size: 23 local range: 14532-14555
+[1042][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1042 -> local size: 33 local range: 27653-27686
+[ 662][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 662 -> local size: 27 local range: 17437-17464
+[1210][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1210 -> local size: 27 local range: 32821-32848
+[ 730][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 730 -> local size: 23 local range: 19099-19122
+[ 959][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 959 -> local size: 34 local range: 25090-25124
+[ 880][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 880 -> local size: 28 local range: 22767-22795
+[  83][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 83 -> local size: 33 local range: 2116-2149
+[ 363][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 363 -> local size: 29 local range: 9752-9781
+[1099][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1099 -> local size: 27 local range: 29410-29437
+[ 486][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 486 -> local size: 25 local range: 13082-13107
+[ 211][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 211 -> local size: 25 local range: 5734-5759
+[ 439][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 439 -> local size: 29 local range: 11793-11822
+[ 283][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 283 -> local size: 29 local range: 7592-7621
+[ 793][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 793 -> local size: 26 local range: 20610-20636
+[ 542][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 542 -> local size: 24 local range: 14575-14599
+[1043][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1043 -> local size: 29 local range: 27686-27715
+[ 663][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 663 -> local size: 27 local range: 17464-17491
+[1213][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1213 -> local size: 32 local range: 32903-32935
+[ 731][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 731 -> local size: 20 local range: 19122-19142
+[ 961][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 961 -> local size: 27 local range: 25155-25182
+[ 881][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 881 -> local size: 29 local range: 22795-22824
+[  90][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 90 -> local size: 32 local range: 2350-2382
+[ 364][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 364 -> local size: 26 local range: 9781-9807
+[1102][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1102 -> local size: 29 local range: 29499-29528
+[ 487][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 487 -> local size: 24 local range: 13107-13131
+[ 212][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 212 -> local size: 27 local range: 5759-5786
+[ 441][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 441 -> local size: 29 local range: 11846-11875
+[ 284][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 284 -> local size: 29 local range: 7621-7650
+[ 794][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 794 -> local size: 24 local range: 20636-20660
+[ 545][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 545 -> local size: 21 local range: 14640-14661
+[1044][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1044 -> local size: 32 local range: 27715-27747
+[ 665][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 665 -> local size: 23 local range: 17517-17540
+[1144][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1144 -> local size: 32 local range: 30797-30829
+[ 733][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 733 -> local size: 20 local range: 19162-19182
+[ 963][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 963 -> local size: 33 local range: 25215-25248
+[ 882][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 882 -> local size: 26 local range: 22824-22850
+[  91][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 91 -> local size: 36 local range: 2382-2418
+[ 366][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 366 -> local size: 24 local range: 9836-9860
+[1103][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1103 -> local size: 31 local range: 29528-29559
+[ 489][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 489 -> local size: 25 local range: 13158-13183
+[ 213][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 213 -> local size: 27 local range: 5786-5813
+[ 442][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 442 -> local size: 25 local range: 11875-11900
+[ 285][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 285 -> local size: 31 local range: 7650-7681
+[ 795][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 795 -> local size: 26 local range: 20660-20686
+[ 547][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 547 -> local size: 19 local range: 14685-14704
+[1045][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1045 -> local size: 34 local range: 27747-27781
+[ 666][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 666 -> local size: 26 local range: 17540-17566
+[1145][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1145 -> local size: 30 local range: 30829-30859
+[ 734][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 734 -> local size: 26 local range: 19182-19208
+[ 965][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 965 -> local size: 33 local range: 25281-25314
+[ 883][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 883 -> local size: 26 local range: 22850-22876
+[  95][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 95 -> local size: 32 local range: 2524-2556
+[ 367][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 367 -> local size: 27 local range: 9860-9887
+[1105][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1105 -> local size: 32 local range: 29590-29622
+[ 490][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 490 -> local size: 29 local range: 13183-13212
+[ 214][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 214 -> local size: 22 local range: 5813-5835
+[ 443][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 443 -> local size: 29 local range: 11900-11929
+[ 286][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 286 -> local size: 28 local range: 7681-7709
+[ 799][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 799 -> local size: 26 local range: 20761-20787
+[ 553][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 553 -> local size: 22 local range: 14816-14838
+[1046][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1046 -> local size: 36 local range: 27781-27817
+[ 667][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 667 -> local size: 23 local range: 17566-17589
+[1147][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1147 -> local size: 32 local range: 30890-30922
+[ 735][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 735 -> local size: 25 local range: 19208-19233
+[ 966][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 966 -> local size: 33 local range: 25314-25347
+[ 885][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 885 -> local size: 33 local range: 22906-22939
+[  97][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 97 -> local size: 33 local range: 2588-2621
+[ 369][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 369 -> local size: 29 local range: 9916-9945
+[1106][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1106 -> local size: 30 local range: 29622-29652
+[ 491][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 491 -> local size: 24 local range: 13212-13236
+[ 215][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 215 -> local size: 26 local range: 5835-5861
+[ 446][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 446 -> local size: 26 local range: 11983-12009
+[ 287][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 287 -> local size: 25 local range: 7709-7734
+[ 801][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 801 -> local size: 28 local range: 20814-20842
+[ 558][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 558 -> local size: 23 local range: 14933-14956
+[1050][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1050 -> local size: 31 local range: 27912-27943
+[ 669][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 669 -> local size: 29 local range: 17615-17644
+[1148][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1148 -> local size: 33 local range: 30922-30955
+[ 736][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 736 -> local size: 23 local range: 19233-19256
+[ 967][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 967 -> local size: 32 local range: 25347-25379
+[ 886][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 886 -> local size: 29 local range: 22939-22968
+[  99][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 99 -> local size: 31 local range: 2654-2685
+[ 370][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 370 -> local size: 28 local range: 9945-9973
+[1107][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1107 -> local size: 32 local range: 29652-29684
+[ 495][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 495 -> local size: 26 local range: 13317-13343
+[ 216][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 216 -> local size: 24 local range: 5861-5885
+[ 447][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 447 -> local size: 28 local range: 12009-12037
+[ 289][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 289 -> local size: 30 local range: 7760-7790
+[ 803][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 803 -> local size: 29 local range: 20869-20898
+[ 563][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 563 -> local size: 25 local range: 15054-15079
+[1051][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1051 -> local size: 33 local range: 27943-27976
+[ 670][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 670 -> local size: 23 local range: 17644-17667
+[1149][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1149 -> local size: 35 local range: 30955-30990
+[ 737][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 737 -> local size: 25 local range: 19256-19281
+[ 969][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 969 -> local size: 33 local range: 25415-25448
+[ 893][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 893 -> local size: 29 local range: 23142-23171
+[ 111][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 111 -> local size: 33 local range: 3041-3074
+[ 371][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 371 -> local size: 28 local range: 9973-10001
+[1108][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1108 -> local size: 29 local range: 29684-29713
+[ 497][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 497 -> local size: 25 local range: 13373-13398
+[ 217][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 217 -> local size: 25 local range: 5885-5910
+[ 449][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 449 -> local size: 26 local range: 12065-12091
+[ 290][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 290 -> local size: 27 local range: 7790-7817
+[ 805][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 805 -> local size: 29 local range: 20924-20953
+[ 569][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 569 -> local size: 22 local range: 15175-15197
+[1052][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1052 -> local size: 31 local range: 27976-28007
+[ 671][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 671 -> local size: 25 local range: 17667-17692
+[1150][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1150 -> local size: 34 local range: 30990-31024
+[ 738][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 738 -> local size: 22 local range: 19281-19303
+[ 971][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 971 -> local size: 35 local range: 25482-25517
+[ 895][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 895 -> local size: 27 local range: 23200-23227
+[ 113][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 113 -> local size: 33 local range: 3109-3142
+[ 372][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 372 -> local size: 29 local range: 10001-10030
+[1110][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1110 -> local size: 32 local range: 29740-29772
+[ 499][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 499 -> local size: 27 local range: 13427-13454
+[ 218][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 218 -> local size: 25 local range: 5910-5935
+[ 450][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 450 -> local size: 29 local range: 12091-12120
+[ 291][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 291 -> local size: 27 local range: 7817-7844
+[ 809][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 809 -> local size: 24 local range: 21034-21058
+[ 571][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 571 -> local size: 22 local range: 15221-15243
+[1053][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1053 -> local size: 32 local range: 28007-28039
+[ 673][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 673 -> local size: 26 local range: 17718-17744
+[1152][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1152 -> local size: 33 local range: 31054-31087
+[ 739][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 739 -> local size: 25 local range: 19303-19328
+[ 973][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 973 -> local size: 33 local range: 25551-25584
+[ 896][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 896 -> local size: 28 local range: 23227-23255
+[ 114][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 114 -> local size: 36 local range: 3142-3178
+[ 374][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 374 -> local size: 27 local range: 10059-10086
+[1111][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1111 -> local size: 30 local range: 29772-29802
+[ 505][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 505 -> local size: 27 local range: 13593-13620
+[ 219][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 219 -> local size: 25 local range: 5935-5960
+[ 451][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 451 -> local size: 29 local range: 12120-12149
+[ 297][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 297 -> local size: 28 local range: 7976-8004
+[ 810][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 810 -> local size: 17 local range: 21058-21075
+[ 574][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 574 -> local size: 25 local range: 15288-15313
+[1054][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1054 -> local size: 30 local range: 28039-28069
+[ 674][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 674 -> local size: 18 local range: 17744-17762
+[1153][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1153 -> local size: 28 local range: 31087-31115
+[ 742][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 742 -> local size: 23 local range: 19374-19397
+[ 974][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 974 -> local size: 32 local range: 25584-25616
+[ 897][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 897 -> local size: 30 local range: 23255-23285
+[ 116][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 116 -> local size: 32 local range: 3212-3244
+[ 375][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 375 -> local size: 28 local range: 10086-10114
+[1112][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1112 -> local size: 28 local range: 29802-29830
+[ 507][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 507 -> local size: 29 local range: 13646-13675
+[ 220][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 220 -> local size: 26 local range: 5960-5986
+[ 452][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 452 -> local size: 30 local range: 12149-12179
+[ 298][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 298 -> local size: 25 local range: 8004-8029
+[ 811][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 811 -> local size: 21 local range: 21075-21096
+[ 577][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 577 -> local size: 21 local range: 15357-15378
+[1056][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1056 -> local size: 31 local range: 28101-28132
+[ 675][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 675 -> local size: 18 local range: 17762-17780
+[1155][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1155 -> local size: 34 local range: 31147-31181
+[ 743][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 743 -> local size: 25 local range: 19397-19422
+[ 975][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 975 -> local size: 33 local range: 25616-25649
+[ 899][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 899 -> local size: 31 local range: 23313-23344
+[ 119][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 119 -> local size: 33 local range: 3307-3340
+[ 376][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 376 -> local size: 25 local range: 10114-10139
+[1113][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1113 -> local size: 28 local range: 29830-29858
+[ 515][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 515 -> local size: 29 local range: 13857-13886
+[ 221][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 221 -> local size: 24 local range: 5986-6010
+[ 453][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 453 -> local size: 27 local range: 12179-12206
+[ 299][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 299 -> local size: 27 local range: 8029-8056
+[ 817][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 817 -> local size: 26 local range: 21202-21228
+[ 585][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 585 -> local size: 25 local range: 15546-15571
+[1057][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1057 -> local size: 33 local range: 28132-28165
+[ 677][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 677 -> local size: 17 local range: 17800-17817
+[1156][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1156 -> local size: 31 local range: 31181-31212
+[ 745][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 745 -> local size: 25 local range: 19444-19469
+[ 977][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 977 -> local size: 30 local range: 25678-25708
+[ 900][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 900 -> local size: 30 local range: 23344-23374
+[ 122][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 122 -> local size: 33 local range: 3406-3439
+[ 377][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 377 -> local size: 29 local range: 10139-10168
+[1114][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1114 -> local size: 30 local range: 29858-29888
+[ 516][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 516 -> local size: 27 local range: 13886-13913
+[ 222][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 222 -> local size: 24 local range: 6010-6034
+[ 454][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 454 -> local size: 31 local range: 12206-12237
+[ 301][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 301 -> local size: 30 local range: 8083-8113
+[ 820][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 820 -> local size: 24 local range: 21274-21298
+[ 588][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 588 -> local size: 28 local range: 15622-15650
+[1058][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1058 -> local size: 29 local range: 28165-28194
+[ 678][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 678 -> local size: 21 local range: 17817-17838
+[1157][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1157 -> local size: 36 local range: 31212-31248
+[ 746][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 746 -> local size: 26 local range: 19469-19495
+[ 979][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 979 -> local size: 31 local range: 25740-25771
+[ 902][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 902 -> local size: 27 local range: 23406-23433
+[ 143][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 143 -> local size: 32 local range: 4098-4130
+[ 378][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 378 -> local size: 23 local range: 10168-10191
+[1115][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1115 -> local size: 27 local range: 29888-29915
+[ 517][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 517 -> local size: 28 local range: 13913-13941
+[ 224][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 224 -> local size: 23 local range: 6060-6083
+[ 455][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 455 -> local size: 28 local range: 12237-12265
+[ 302][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 302 -> local size: 23 local range: 8113-8136
+[ 822][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 822 -> local size: 24 local range: 21320-21344
+[ 591][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 591 -> local size: 23 local range: 15700-15723
+[1059][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1059 -> local size: 31 local range: 28194-28225
+[ 679][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 679 -> local size: 24 local range: 17838-17862
+[1158][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1158 -> local size: 32 local range: 31248-31280
+[ 747][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 747 -> local size: 24 local range: 19495-19519
+[ 981][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 981 -> local size: 36 local range: 25807-25843
+[ 903][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 903 -> local size: 27 local range: 23433-23460
+[ 379][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 379 -> local size: 30 local range: 10191-10221
+[1117][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1117 -> local size: 27 local range: 29945-29972
+[ 518][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 518 -> local size: 29 local range: 13941-13970
+[ 225][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 225 -> local size: 25 local range: 6083-6108
+[ 303][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 303 -> local size: 32 local range: 8136-8168
+[ 823][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 823 -> local size: 22 local range: 21344-21366
+[ 599][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 599 -> local size: 25 local range: 15873-15898
+[1060][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1060 -> local size: 29 local range: 28225-28254
+[ 681][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 681 -> local size: 23 local range: 17883-17906
+[1159][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1159 -> local size: 34 local range: 31280-31314
+[ 753][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 753 -> local size: 25 local range: 19653-19678
+[ 984][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 984 -> local size: 34 local range: 25909-25943
+[ 904][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 904 -> local size: 28 local range: 23460-23488
+[1120][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1120 -> local size: 30 local range: 30034-30064
+[ 527][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 527 -> local size: 25 local range: 14193-14218
+[ 226][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 226 -> local size: 25 local range: 6108-6133
+[ 827][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 827 -> local size: 27 local range: 21439-21466
+[ 607][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 607 -> local size: 20 local range: 16058-16078
+[1063][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1063 -> local size: 34 local range: 28317-28351
+[ 682][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 682 -> local size: 22 local range: 17906-17928
+[1160][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1160 -> local size: 31 local range: 31314-31345
+[ 755][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 755 -> local size: 27 local range: 19702-19729
+[ 985][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 985 -> local size: 36 local range: 25943-25979
+[ 905][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 905 -> local size: 27 local range: 23488-23515
+[1123][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1123 -> local size: 32 local range: 30125-30157
+[ 529][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 529 -> local size: 27 local range: 14248-14275
+[ 830][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 830 -> local size: 24 local range: 21518-21542
+[ 683][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 683 -> local size: 24 local range: 17928-17952
+[1162][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1162 -> local size: 29 local range: 31376-31405
+[ 758][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 758 -> local size: 23 local range: 19766-19789
+[ 986][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 986 -> local size: 34 local range: 25979-26013
+[ 906][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 906 -> local size: 27 local range: 23515-23542
+[1127][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1127 -> local size: 28 local range: 30246-30274
+[ 835][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 835 -> local size: 25 local range: 21644-21669
+[1163][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1163 -> local size: 30 local range: 31405-31435
+[ 759][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 759 -> local size: 18 local range: 19789-19807
+[ 909][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 909 -> local size: 25 local range: 23595-23620
+[1128][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1128 -> local size: 32 local range: 30274-30306
+[1166][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1166 -> local size: 30 local range: 31504-31534
+[ 911][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 911 -> local size: 28 local range: 23648-23676
+[1129][INFO    ]----(129.254 sec) [Ginkgo CG] Rank 1129 -> local size: 29 local range: 30306-30335
+[1168][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1168 -> local size: 34 local range: 31565-31599
+[1133][INFO    ]----(129.253 sec) [Ginkgo CG] Rank 1133 -> local size: 33 local range: 30434-30467
+[1170][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1170 -> local size: 28 local range: 31625-31653
+[1171][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1171 -> local size: 30 local range: 31653-31683
+[1172][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1172 -> local size: 27 local range: 31683-31710
+[1174][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1174 -> local size: 28 local range: 31737-31765
+[1176][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1176 -> local size: 27 local range: 31794-31821
+[1177][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1177 -> local size: 30 local range: 31821-31851
+[1180][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1180 -> local size: 32 local range: 31906-31938
+[1182][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1182 -> local size: 31 local range: 31968-31999
+[1183][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1183 -> local size: 28 local range: 31999-32027
+[1185][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1185 -> local size: 30 local range: 32057-32087
+[1186][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1186 -> local size: 30 local range: 32087-32117
+[1187][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1187 -> local size: 30 local range: 32117-32147
+[1189][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1189 -> local size: 30 local range: 32179-32209
+[1190][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1190 -> local size: 27 local range: 32209-32236
+[1191][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1191 -> local size: 30 local range: 32236-32266
+[1192][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1192 -> local size: 32 local range: 32266-32298
+[1193][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1193 -> local size: 34 local range: 32298-32332
+[1194][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1194 -> local size: 32 local range: 32332-32364
+[1197][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1197 -> local size: 34 local range: 32427-32461
+[1199][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1199 -> local size: 26 local range: 32491-32517
+[1200][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1200 -> local size: 31 local range: 32517-32548
+[1202][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1202 -> local size: 27 local range: 32577-32604
+[1204][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1204 -> local size: 27 local range: 32635-32662
+[1207][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1207 -> local size: 35 local range: 32723-32758
+[1211][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1211 -> local size: 29 local range: 32848-32877
+[1212][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1212 -> local size: 26 local range: 32877-32903
+[1214][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1214 -> local size: 29 local range: 32935-32964
+[1215][INFO    ]----(129.260 sec) [Ginkgo CG] Rank 1215 -> local size: 33 local range: 32964-32997
+[1140][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1140 -> local size: 30 local range: 30673-30703
+[1142][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1142 -> local size: 32 local range: 30735-30767
+[1146][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1146 -> local size: 31 local range: 30859-30890
+[1161][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1161 -> local size: 31 local range: 31345-31376
+[1164][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1164 -> local size: 35 local range: 31435-31470
+[1175][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1175 -> local size: 29 local range: 31765-31794
+[1181][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1181 -> local size: 30 local range: 31938-31968
+[1206][INFO    ]----(129.261 sec) [Ginkgo CG] Rank 1206 -> local size: 30 local range: 32693-32723
+[   0][INFO    ]----(129.704 sec) [Ginkgo CG] converged after 74 iterations,  residual norm: 7.05325e-13
+[   0][INFO    ]----(131.665 sec)          1 |  3.39e-06 |  9.45e-02 |  1.25e-02
+[   0][INFO    ]----(133.741 sec) [Ginkgo CG] converged after 68 iterations,  residual norm: 7.27109e-13
+[   0][INFO    ]----(135.675 sec)          2 |  1.14e-06 |  3.36e-01 |  6.37e-03
+[   0][INFO    ]----(137.748 sec) [Ginkgo CG] converged after 65 iterations,  residual norm: 7.21555e-13
+[   0][INFO    ]----(139.690 sec)          3 |  5.18e-07 |  4.55e-01 |  3.81e-03
+[   0][INFO    ]----(141.679 sec) [Ginkgo CG] converged after 62 iterations,  residual norm: 9.96402e-13
+[   0][INFO    ]----(143.577 sec)          4 |  2.69e-07 |  5.19e-01 |  2.44e-03
+[   0][INFO    ]----(145.621 sec) [Ginkgo CG] converged after 61 iterations,  residual norm: 8.20978e-13
+[   0][INFO    ]----(147.593 sec)          5 |  1.53e-07 |  5.68e-01 |  1.64e-03
+[   0][INFO    ]----(149.605 sec) [Ginkgo CG] converged after 59 iterations,  residual norm: 8.58004e-13
+[   0][INFO    ]----(151.909 sec)          6 |  9.25e-08 |  6.06e-01 |  1.14e-03
+[   0][INFO    ]----(153.934 sec) [Ginkgo CG] converged after 58 iterations,  residual norm: 7.14249e-13
+[   0][INFO    ]----(155.853 sec)          7 |  5.90e-08 |  6.38e-01 |  8.11e-04
+[   0][INFO    ]----(157.861 sec) [Ginkgo CG] converged after 57 iterations,  residual norm: 6.88605e-13
+[   0][INFO    ]----(159.857 sec)          8 |  3.92e-08 |  6.65e-01 |  5.90e-04
+[   0][INFO    ]----(161.893 sec) [Ginkgo CG] converged after 55 iterations,  residual norm: 9.53395e-13
+[   0][INFO    ]----(163.812 sec)          9 |  2.70e-08 |  6.88e-01 |  4.37e-04
+[   0][INFO    ]----(163.812 sec) [progress] Residual and error calculation ...
+[   0][INFO    ]----(164.214 sec) [progress] Writing JSON file:tokamak-pre-agg-gko_isai-3-128.timings.json
+================================================================================
+|         END LOGGING - Friday, 05.November 2021, 11:24:51                     |
+================================================================================

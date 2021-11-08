@@ -1,0 +1,158 @@
+================================================================================
+|       BEGIN LOGGING - Monday, 25.October 2021, 10:28:55                      |
+================================================================================
+[   0][INFO    ]------(0.000 sec) Git info:
+[   0][INFO    ]------(0.000 sec)  - SHA1:   59d323bb6
+[   0][INFO    ]------(0.000 sec)  - branch: koch/gingko-integration
+[   0][INFO    ]------(0.000 sec) Solver settings
+[   0]                              - solver:                      gmg_wjac
+[   0]                              - relative residual reduction: 0.001
+[   0]                              - pre smooth:                  3
+[   0]                              - post smooth:                 3
+[   0]                              - coarse grid:                 cg_petsc
+[   0]                              - use agglomeration on coarse grid with 152 processes
+[   0]                            
+[   0][INFO    ]------(0.000 sec) Discretization
+[   0]                              - element type: p1
+[   0]                              - min level:    0
+[   0]                              - max level:    6
+[   0]                            
+[   0][INFO    ]------(0.000 sec) Tokamak domain and PDE config
+[   0]                              - toroidal slices:     12
+[   0]                              - poloidal slices:     9
+[   0]                              - tube layer radii:    [3 ]
+[   0]                              - coeff min:           1e-06
+[   0]                              - coeff max:           1
+[   0]                              - coeff jump location: 0.5
+[   0]                              - coeff jump width:    0.1
+[   0]                              - coarse mesh refine:  2
+[   0]                            
+[   0][INFO    ]------(0.000 sec) App settings
+[   0]                              - DB file:                          Tokamak.db
+[   0]                              - coarse mesh and quit:             false
+[   0]                              - VTK:                              false
+[   0]                              - VTK directory:                    ./vtk
+[   0]                              - precomputing element matrices:    true
+[   0]                              - output linear system and vectors: false
+[   0]                              - output linear system base name:   test
+[   0]                              - output linear system format:      ascii_matlab
+[   0]                            
+[   0][INFO    ]------(0.000 sec) [progress] Setting up torus mesh ...
+[   0][INFO    ]------(1.364 sec) [progress] Setting up tokamak blending map ...
+[   0][INFO    ]------(1.479 sec) [progress] Finished setting up tokamak blending map
+[   0][INFO    ]------(1.528 sec) ====================== PrimitiveStorage ======================
+[   0]                             - mesh dimensionality:                              3D
+[   0]                             - processes:                                        1216
+[   0]                             - neighbor processes (min, max, avg):               12, 63, 25.2336
+[   0]                             - primitive distribution:
+[   0]                                            +-------------------------------------------+
+[   0]                                            |    total |      min |      max |      avg |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               | primitives |    98998 |       56 |      102 |     81.4 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |   vertices |     4818 |        2 |        6 |      4.0 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      edges |    28739 |       12 |       35 |     23.6 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      faces |    44705 |       24 |       46 |     36.8 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      cells |    20736 |       17 |       18 |     17.1 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                            ==============================================================
+[   0]                            
+[   0][INFO    ]------(1.528 sec) DoFs
+[   0][INFO    ]------(1.528 sec) level |          inner |          total 
+[   0][INFO    ]------(1.528 sec) ---------------------------------------
+[   0][INFO    ]------(1.528 sec)     0 |           1862 |           4818
+[   0][INFO    ]------(1.529 sec)     1 |          21126 |          33557
+[   0][INFO    ]------(1.529 sec)     2 |         195107 |         245886
+[   0][INFO    ]------(1.529 sec)     3 |        1665489 |        1870556
+[   0][INFO    ]------(1.529 sec)     4 |       13740797 |       14564808
+[   0][INFO    ]------(1.529 sec)     5 |      111588501 |      114891872
+[   0][INFO    ]------(1.529 sec)     6 |      899343557 |      912571536
+[   0][INFO    ]------(1.529 sec) ---------------------------------------
+[   0][INFO    ]------(1.529 sec) [progress] Allocation of functions and operator setup ...
+[   0][INFO    ]-----(46.448 sec) [progress] Precomputing element matrices ...
+[   0][INFO    ]-----(91.756 sec) ====================== Function Allocation Info ======================
+[   0][INFO    ]-----(91.756 sec)                        +--------------+--------------+--------------+
+[   0][INFO    ]-----(91.756 sec)                        |          sum |          min |          max |
+[   0][INFO    ]-----(91.756 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]-----(91.756 sec)  allocated memory (GB) |       99.360 |        0.077 |        0.086 | 
+[   0][INFO    ]-----(91.756 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]-----(91.756 sec) 
+[   0][INFO    ]-----(91.756 sec)            +----------------------+----------------------+----------------------+
+[   0][INFO    ]-----(91.756 sec)            |  number of functions |          number DoFs | memory DoFs only (GB)|
+[   0][INFO    ]-----(91.756 sec)  ----------+----------------------+----------------------+----------------------+
+[   0][INFO    ]-----(91.756 sec)  VertexDoF |                    8 |           8353464264 |               66.828 |
+[   0][INFO    ]-----(91.756 sec)  EdgeDoF   |                    0 |                    0 |                0.000 |
+[   0][INFO    ]-----(91.756 sec)  ----------+----------------------+----------------------+----------------------+
+[   0][INFO    ]-----(91.756 sec)  total     |                    8 |           8353464264 |               66.828 |
+[   0][INFO    ]-----(91.756 sec)  ----------+----------------------+----------------------+----------------------+
+[   0][INFO    ]-----(91.756 sec) 
+[   0][INFO    ]-----(91.756 sec)  - mixed and composites:
+[   0][INFO    ]-----(91.756 sec)    + P2Function:       0
+[   0][INFO    ]-----(91.756 sec) ======================================================================
+[   0][INFO    ]-----(91.757 sec) ========================= Memory Usage Info =========================
+[   0][INFO    ]-----(91.757 sec)  method: PETSc
+[   0][INFO    ]-----(91.757 sec)                        +--------------+--------------+--------------+
+[   0][INFO    ]-----(91.757 sec)                        |          sum |          min |          max |
+[   0][INFO    ]-----(91.757 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]-----(91.757 sec)  allocated memory (GB) |     2087.589 |        1.707 |        1.795 | 
+[   0][INFO    ]-----(91.757 sec)  ----------------------+--------------+--------------+--------------+
+[   0][INFO    ]-----(91.757 sec) =====================================================================
+[   0][INFO    ]-----(91.757 sec) 
+[   0][INFO    ]-----(91.757 sec) [progress] Interpolating boundary conditions, coefficient, and exact solution ...
+[   0][INFO    ]----(101.862 sec) [progress] Setting up solver ...
+[   0][INFO    ]----(101.903 sec) [progress] Coarse grid solver agglomeration enabled.
+[   0][INFO    ]----(101.905 sec) [progress] Agglomeration from 1216 to 152 processes.
+[   0][INFO    ]----(101.905 sec) [progress] Solving on empty processes: yes
+[   0][INFO    ]----(101.905 sec) [progress] Setting up agglomeration primitive storage ...
+[   0][INFO    ]----(101.905 sec) [progress] Re-distribution of agglomeration primitive storage  ...
+[   0][INFO    ]----(101.989 sec) ====================== PrimitiveStorage ======================
+[   0]                             - mesh dimensionality:                              3D
+[   0]                             - processes:                                        152
+[   0]                             - neighbor processes (min, max, avg):               14, 67, 20.2368
+[   0]                             - primitive distribution:
+[   0]                                            +-------------------------------------------+
+[   0]                                            |    total |      min |      max |      avg |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               | primitives |    98998 |      518 |      732 |    651.3 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |   vertices |     4818 |       21 |       40 |     31.7 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      edges |    28739 |      131 |      227 |    189.1 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      faces |    44705 |      222 |      329 |    294.1 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                               |      cells |    20736 |      136 |      144 |    136.4 |
+[   0]                               +------------+----------+----------+----------+----------+
+[   0]                            ==============================================================
+[   0]                            
+[   0][INFO    ]----(102.011 sec) [progress] Initial residual and error calculation ...
+[   0][INFO    ]----(102.453 sec) [progress] Solving ...
+[   0][INFO    ]----(102.453 sec)  iteration |  residual | res. rate |     error 
+[   0][INFO    ]----(102.453 sec)  ----------+-----------+-----------+-----------
+[   0][INFO    ]----(102.453 sec)    initial |  1.08e-04 |         - |  4.57e-02
+[   0][INFO    ]----(105.198 sec) [PETSc CG] NOT converged after 3 iterations, residual norm0.136447
+[   0][INFO    ]----(106.863 sec)          1 |  1.05e-05 |  9.73e-02 |  1.57e-02
+[   0][INFO    ]----(108.591 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.0423418
+[   0][INFO    ]----(110.255 sec)          2 |  3.63e-06 |  3.47e-01 |  7.66e-03
+[   0][INFO    ]----(111.932 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.0187281
+[   0][INFO    ]----(113.569 sec)          3 |  1.70e-06 |  4.68e-01 |  4.26e-03
+[   0][INFO    ]----(115.281 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.00950723
+[   0][INFO    ]----(116.947 sec)          4 |  9.02e-07 |  5.31e-01 |  2.53e-03
+[   0][INFO    ]----(118.678 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.00521635
+[   0][INFO    ]----(120.387 sec)          5 |  5.19e-07 |  5.75e-01 |  1.57e-03
+[   0][INFO    ]----(122.120 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.00302469
+[   0][INFO    ]----(123.804 sec)          6 |  3.15e-07 |  6.07e-01 |  1.01e-03
+[   0][INFO    ]----(125.537 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.00182897
+[   0][INFO    ]----(127.288 sec)          7 |  1.99e-07 |  6.31e-01 |  6.68e-04
+[   0][INFO    ]----(129.040 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.00114323
+[   0][INFO    ]----(130.802 sec)          8 |  1.29e-07 |  6.50e-01 |  4.54e-04
+[   0][INFO    ]----(132.604 sec) [PETSc CG] NOT converged after 2 iterations, residual norm0.000734705
+[   0][INFO    ]----(134.336 sec)          9 |  8.60e-08 |  6.65e-01 |  3.16e-04
+[   0][INFO    ]----(134.336 sec) [progress] Residual and error calculation ...
+[   0][INFO    ]----(134.716 sec) [progress] Writing JSON file:tokamak-pre-agg-gamg-2-16.timings.json
+================================================================================
+|         END LOGGING - Monday, 25.October 2021, 10:31:11                      |
+================================================================================
